@@ -61,5 +61,6 @@ There should be a folder named **anthill** in your localhost directory. You now 
 Coming Soon
 --------------------
 
-*Documentation for updating the project*
+*Documentation for updating the project* 
+
 *And plan to take over ze world*
