@@ -62,3 +62,4 @@ Coming Soon
 --------------------
 
 *Documentation for updating the project*
+*And plan to take over ze world*
