@@ -58,6 +58,17 @@ Getting Started
   
 There should be a folder named **anthill** in your localhost directory. You now have access to the Anthill project on your computer to make changes.
 
+Database Configuration
+---------------------
+
+Username: ahuser
+Password: secure
+Database: anthill
+
+Admin Login: ahuser
+Admin Password: secure
+
+
 Coming Soon
 --------------------
 
