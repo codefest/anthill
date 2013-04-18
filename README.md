@@ -61,7 +61,7 @@ There should be a folder named **anthill** in your localhost directory. You now 
 Email Address: codefest@platt.edu
 Email Password: plattsecure
 
-<<<<<<< HEAD
+
 
 =======
 Database Configuration
@@ -76,7 +76,7 @@ Admin Password: secure
 
 
 
->>>>>>> 96a2bd730ad5e424290530ae39baf99978660037
+
 
 Coming Soon
 --------------------
