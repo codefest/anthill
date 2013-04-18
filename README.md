@@ -58,6 +58,13 @@ Getting Started
   
 There should be a folder named **anthill** in your localhost directory. You now have access to the Anthill project on your computer to make changes.
 
+Wordpress Database User Info
+
+USERNAME: ahuser
+Password: secure
+Email Address: codefest@platt.edu
+Email Password: plattsecure
+
 Coming Soon
 --------------------
 
