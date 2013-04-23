@@ -8,7 +8,7 @@ For more information about Codefest, check out [Codefest at Platt](http://codefe
 The People
 ---------------
 
-**Code Team:** 
+**Code Team:**
 
 * [Anne Dorko](http://github.com/annedorko)
 * [Dave Downes](https://github.com/evil-dave)
@@ -23,8 +23,10 @@ The People
 * [Joe Juette](https://github.com/jjuette)
 
 
-Getting Started
+Getting Started: Quick Start
 ---------------
+
+For a more in-depth understanding of our project, [visit the wiki](https://github.com/codefest/anthill/wiki).
 
 *Step Zero: Create a GitHub account and get added to the Codefest team.*
 
@@ -58,13 +60,9 @@ Getting Started
   
 There should be a folder named **anthill** in your localhost directory. You now have access to the Anthill project on your computer to make changes.
 
-Email Address: codefest@platt.edu
-Email Password: plattsecure
 
 
-
-=======
-Database Configuration
+Usernames & Passwords
 ---------------------
 
 Username: ahuser
@@ -74,13 +72,11 @@ Database: anthill
 Admin Login: ahuser
 Admin Password: secure
 
+Email Address: codefest@platt.edu
+Email Password: plattsecure
 
 
-
-
-Coming Soon
+Participate
 --------------------
 
-*Documentation for updating the project* 
-
-*And plan to take over ze world*
+To participate in this project, please [consult the wiki](https://github.com/codefest/anthill/wiki).
