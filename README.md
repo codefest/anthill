@@ -21,6 +21,7 @@ The People
 **Design Team**
 * [Melissa Cabral](https://github.com/melissacabral)
 * [Joe Juette](https://github.com/jjuette)
+* [Daryck Caldemeyer](https://github.com/daryckc)
 
 
 Getting Started: Quick Start
