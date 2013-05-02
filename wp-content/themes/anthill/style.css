@@ -7,14 +7,35 @@ Description: The insanely amazing theme for the codename anthill app
 Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+                                
+ _ _  _| _  _  _  _ _  _ 
+(_(_)(_|(/_| |(_|| | |(/_
+     ___      .__   __. .___________. __    __   __   __       __      
+    /   \     |  \ |  | |           ||  |  |  | |  | |  |     |  |     
+   /  ^  \    |   \|  | `---|  |----`|  |__|  | |  | |  |     |  |     
+  /  /_\  \   |  . `  |     |  |     |   __   | |  | |  |     |  |     
+ /  _____  \  |  |\   |     |  |     |  |  |  | |  | |  `----.|  `----.
+/__/     \__\ |__| \__|     |__|     |__|  |__| |__| |_______||_______|
+
+
+======================================================================
+
+Table of Contents
+
+ ==HTML5 Boilerplate styles and Clearfix
+ ==Basic Layout
+ ==Links
+ ==Typography
+ ==Navigation
+  TODO: finish the table of contents here
+
+======================================================================
+
+  TODO:
+  responsive breakpoints
+  test/bugfix for older browsers (first draft is only tested in current ver chrome, FF and IE)
+
 */
-/**
- * Table of Contents
- * ==HTML5 Boilerplate styles and Clearfix
- * ==Basic Layout
- * ==Typography
- * ==Navigation
- */
 
 /**
  * ==HTML5 Boilerplate styles and Clearfix 
@@ -36,7 +57,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     *zoom: 1;
 } 
 /* 
-    HTML5BP stuff
+    Basic resets
 */ 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -63,21 +84,14 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
-img {
-    vertical-align: middle;
-}
-
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
-
 textarea {
     resize: vertical;
 }
-
 .chromeframe {
     margin: 0.2em 0;
     background: #ccc;
@@ -85,6 +99,11 @@ textarea {
     padding: 0.2em 0;
 }
 
+img, embed, object, video{
+    max-width: 100%; /* TODO: only works with ie7+ */
+    vertical-align: middle;
+
+ }
 
 /**
  * ==Basic Layout
@@ -93,6 +112,11 @@ body{
     width:98%;
     max-width:1000px;
     margin: 0 auto;
+    position: relative;
+}
+header{
+    min-height:10em;
+    padding:1em 0 0 0 ;
 }
 aside{
     width:22%;
@@ -107,23 +131,178 @@ footer{
     clear:both;
 }
 
+.tiles-list .tile{
+    width:31.3333333333333%;
+    margin:0 2% 2% 0;
+    float:left;
+}
+
+/*
+ ==Links
+ */
+
+ a{
+    color:#29a1d3;
+    text-decoration: none;
+    font-weight: bold;
+
+ }
+ a:hover, a:focus{
+
+ }
+ a:active{
+
+ }
+/*
+ ==Typography
+*/
+h1{
+    font-size: 2.5em; /* 40/16 */
+    font-weight: normal;
+}
+h2{
+    font-size: 1.625em; /* 26/16 */
+}
+h3{
+    font-size: 1.125em; /* 18/16 */
+}
+h4{
+    font-size: 1em; /* 16/16 */
+}
+h5{
+    font-size: .875em; /* 14/16 */
+}
+h6{
+    font-size:  .8125em; /* 13/16 */
+}
+p{
+    margin:1em 0;
+}
+
+
+/*
+ ==Navigation
+*/
+nav ul, 
+.utilities {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li{
+    margin-bottom:1em;
+}
+.utilities{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    background-color: #272e2e;
+    text-align: right;
+
+}
+.utilities li{
+    display: inline-block;
+}
+.utilities li a{
+    color:#FFF;
+}
+/*
+==Visual Tile
+*/
+.tile{
+    background-color:#FAFAFA;
+    border:solid 1px #b6b7b7;
+}
+.resource-image{
+    position: relative;
+}
+.popularity{
+    background-color: #323939;
+    display: inline-block;
+    color:#FFF;
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+.resource-image .category-icon{
+    position: absolute;
+    bottom:-1em;
+    left:1em;
+}
+.tile h3{
+    margin:1em;
+}
+.tile .postmeta{
+    margin:1em;
+}
+
+ 
+
+/*
+ ==Icons
+*/
+.category-icon{
+    background-color:#29a1d3; /*default blue*/
+    display: inline-block;
+    color:#FFF;
+    padding:0;
+    -webkit-border-radius: 5em;
+    border-radius: 5em;
+    width: 2.5em;
+    text-align: center;
+    line-height: 2.5em;
+}
 
 
 
+/*
+ ==Buttons and forms
+*/
+.button, 
+input[type=submit],
+input[type=button],
+button{
+    background-color: #eaeded;
+    display: inline-block;
+    line-height: 2em;
+    color:#333a3a;
+    text-decoration: none;
+    margin: 1em 0;
+    padding: 0 .5em;
+    border:none;
+}
+.primary{
+    background-color: #333a3a;
+     color:#FFF;
+     border-bottom: solid 4px #030303;
+     padding:0 .5em 0 0;
+}
+.primary:hover{
+    position: relative;
+    top:4px;
+    border-bottom: none;
+
+}
+/* TODO: Fix this math, it's a mess... icon sticks out of the button and is the wrong font size */
+.primary i{
+    background-color: #29a1d3;/* default blue*/
+    padding:.5em .6em 0 .6em;
+    display: inline-block;
+    margin-right: .5em;
+    height:2em;
+}
+
+.submit-resource{
+    float:right;
+    font-size: 1.2em;
+   
+}
 
 
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
+/*
+   ==Media Queries
+*/
 
    @media only screen and (min-width: 35em) {
 
@@ -136,11 +315,11 @@ footer{
 
    }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+/* 
+   ==Helper classes
+*/
 
-   .ir {
+.ir {
     background-color: transparent;
     border: 0;
     overflow: hidden;
@@ -159,7 +338,8 @@ footer{
     visibility: hidden;
 }
 
-.visuallyhidden {
+.visuallyhidden,
+.screen-reader-text {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -184,23 +364,11 @@ footer{
     visibility: hidden;
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
 
-.clearfix:after {
-    clear: both;
-}
 
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
+/* 
+   ==Print styles
+*/
 
    @media print {
     * {
