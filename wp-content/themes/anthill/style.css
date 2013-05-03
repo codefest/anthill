@@ -273,13 +273,20 @@ button{
     border:none;
 }
 .primary{
+margin:0;
+padding: 0;
+
+}
+
+.primary .button-text{
     background-color: #333a3a;
      color:#FFF;
      border-bottom: solid 4px #030303;
-     padding:0 .5em 0 0;
+     padding: .2em;
 }
 .primary:hover{
-    position: relative;
+
+    border-top: solid 4px #fafafa ;
     top:4px;
     border-bottom: none;
 
@@ -289,10 +296,11 @@ button{
     background-color: #29a1d3;/* default blue*/
     padding:.5em .6em 0 .6em;
     display: inline-block;
-    margin-right: .5em;
     height:2em;
+    line-height: 1.1em;
+    border-bottom:solid 4px #187ac1;
+    color:#fff;
 }
-
 .submit-resource{
     float:right;
     font-size: 1.2em;

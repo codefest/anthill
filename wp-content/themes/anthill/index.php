@@ -4,9 +4,9 @@
         <!-- PRIMARY ACTION BUTTON -->
         <!-- TODO: this markup needs some work -->
         <span class="submit-resource">
-            <a href="#" class="primary button">
-                <i class="icon-plus"></i>
-                 Submit resource
+            <a href="#" class=".a_demo_three">
+                <i class="icon-plus"></i><span>Submit resource</span>
+                 
             </a>
         </span>
 
