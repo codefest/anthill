@@ -70,14 +70,41 @@
 					<a href="PERMALINK">
 						<img src="http://placekitten.com/352/198" alt="TITLE" />
 					</a>
-					<div class="category-icon"> <a href="CATEGORY ARCHIVE"><i class="icon-magic"></i></a> </div>
+					
 					<div class="popularity"><a href="#"><i class="icon-heart"></i></a> 9999</div>
+					<div class="category-icon"> <a href="CATEGORY ARCHIVE"><i class="icon-magic"></i></a> </div>
+					
 				</div>
-				<a href="PERMALINK"><h3 class="entry-title">TITLE OF RESOURCE</h3></a>
+				<h3 class="entry-title"><a href="PERMALINK">TITLE OF RESOURCE</a></h3>
 				<div class="postmeta"> <span class="username"><a href="#">AUTHOR</a></span> |
 					<time datetime="2012-02-17" class="time-ago">a long time ago</time>
 				</div>
 			</article>
+
+			<article class="tile no-image cf graphic-design hentry @TODO  PUT WORDPRESS POST_CLASS HERE">
+				<div class="popularity"><a href="#"><i class="icon-heart"></i></a> 9999</div>
+				<div class="category-icon"> <a href="CATEGORY ARCHIVE"><i class="icon-magic"></i></a> </div>
+				
+				
+				<h3 class="entry-title"><a href="PERMALINK">TITLE OF RESOURCE</a></h3>
+				<div class="postmeta"> <span class="username"><a href="#">AUTHOR</a></span> |
+					<time datetime="2012-02-17" class="time-ago">a long time ago</time>
+				</div>
+				
+			</article>
+			<article class="tile no-image cf graphic-design hentry @TODO  PUT WORDPRESS POST_CLASS HERE">
+				<div class="popularity"><a href="#"><i class="icon-heart"></i></a> 9999</div>
+				<div class="category-icon"> <a href="CATEGORY ARCHIVE"><i class="icon-magic"></i></a> </div>
+				
+				
+				<h3 class="entry-title"><a href="PERMALINK">TITLE OF RESOURCE</a></h3>
+				<div class="postmeta"> <span class="username"><a href="#">AUTHOR</a></span> |
+					<time datetime="2012-02-17" class="time-ago">a long time ago</time>
+				</div>
+				
+			</article>
+
+			
 
 			
 

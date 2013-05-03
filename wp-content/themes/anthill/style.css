@@ -265,6 +265,7 @@ color:#323939;
 .tile {
 	background-color:#FAFAFA;
 	border:solid 1px #e1e3e3;
+	position: relative;
 }
 .resource-image {
 	position: relative;
@@ -287,18 +288,18 @@ color:#323939;
 	color:#F00;
 	background-color: transparent;
 }
-.resource-image .category-icon {
+.tile .category-icon {
 	position: absolute;
 	bottom:-1em;
 	left:1em;
 }
-.resource-image .category-icon:hover{
+.tile .category-icon:hover{
 	background-color: #323939;
 }
-.resource-image .category-icon a {
+.tilee .category-icon a {
 	color:#FFF;
 }
-.resource-image .category-icon a:hover{
+.tile .category-icon a:hover{
 	background-color: transparent;
 }
 .tile .entry-title {
