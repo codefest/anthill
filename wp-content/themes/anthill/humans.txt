@@ -3,13 +3,22 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+	Anne Dorko
+	Melissa Cabral
+	Joe Juette
+	Daryck Caldemeyer
+	Dave Downes
+	Andy Osuna
+	Fred Winton
+	Melissa Conrad
+	Spencer Schell
+	Trish Ladd
 
 # THANKS
 
-    <name>
+    Platt College 
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
+    jQuery, Modernizr, WordPress

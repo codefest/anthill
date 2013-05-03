@@ -1,88 +1,57 @@
+<?php
+/**
+ * default template for our theme.
+ *
+ * @package WordPress
+ * @subpackage Anthill
+ * @since Anthill 0.1
+ */
+?>
 <?php get_header(); ?>
 <div class="wrapper">
-    <main>
-        <!-- PRIMARY ACTION BUTTON -->
-        <!-- TODO: this markup needs some work -->
-        <span class="submit-resource">
-            <a href="#" class=".a_demo_three">
-                <i class="icon-plus"></i><span>Submit resource</span>
-                 
-            </a>
-        </span>
+	<main>
+		<!-- PRIMARY ACTION BUTTON -->
+		<div class="submit-resource">
+			<a href="#" class="primary button">
+				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
+			</a>
+		</div>
 
-        <?php //TODO: put the loop here ?>
+		<?php if ( have_posts() ) : ?>
+			
+				
+				<?php while ( have_posts() ) : the_post(); ?>
+				<article>
+					<?php //@TODO  beef up these loop contents! ?>
+					
+					<h1 class="entry-title"><?php the_title(); ?></h1>
 
-        <h1>Use H1 for page titles</h1>
-        <h2>Example Tiles:</h2>
-         
-        <!-- STANDARD IMAGE TILEs -->
-        <div class="tiles-list cf">
-            <!-- put a multiple .tile boxes in the .tiles-list div. use the loop --> 
+					<div class="entry-content">
+						<?php the_content(); ?>			
+					</div>
+				</article>
 
-            <article class="tile graphic-design hentry TODO: PUT WORDPRESS POST_CLASS HERE">
-                <div class="resource-image thumbnail"> <img src="http://placekitten.com/352/198" />
-                    <div class="category-icon"> <i class="icon-magic"></i> </div>
-                    <div class="popularity"><i class="icon-heart"></i> 9999</div>
-                </div>
-                <h3>TITLE OF RESOURCE</h3>
-                <div class="postmeta"> <span class="username"><a href="#">AUTHOR</a></span> |
-                    <time datetime="2012-02-17" class="time-ago">a long time ago</time>
-                </div>
-            </article>
+				<?php endwhile; ?>				
 
-            <article class="tile graphic-design hentry TODO: PUT WORDPRESS POST_CLASS HERE">
-                <div class="resource-image thumbnail"> <img src="http://placekitten.com/352/198" />
-                    <div class="category-icon"> <i class="icon-magic"></i> </div>
-                    <div class="popularity"><i class="icon-heart"></i> 9999</div>
-                </div>
-                <h3>TITLE OF RESOURCE</h3>
-                <div class="postmeta"> <span class="username"><a href="#">AUTHOR</a></span> |
-                    <time datetime="2012-02-17" class="time-ago">a long time ago</time>
-                </div>
-            </article>
-            <article class="tile graphic-design hentry TODO: PUT WORDPRESS POST_CLASS HERE">
-                <div class="resource-image thumbnail"> <img src="http://placekitten.com/352/198" />
-                    <div class="category-icon"> <i class="icon-magic"></i> </div>
-                    <div class="popularity"><i class="icon-heart"></i> 9999</div>
-                </div>
-                <h3>TITLE OF RESOURCE</h3>
-                <div class="postmeta"> <span class="username"><a href="#">AUTHOR</a></span> |
-                    <time datetime="2012-02-17" class="time-ago">a long time ago</time>
-                </div>
-            </article>
+			<?php else : ?>
 
+				<article id="post-0" class="post no-results not-found hentry">
+					
+					<h1 class="entry-title">Nothing Found</h1>
+					
 
-        </div>
-        <!-- search div is just here as a stand-in for body_class.  -->
-        <div class="search">
-            <h2>Search Results:</h2>
-                <!-- ONE SEARCH RESULT -->
-                <article class="slab graphic-design hentry TODO: PUT WORDPRESS POST_CLASS HERE">
-                    <div class="resource-image thumbnail"> <img src="http://placekitten.com/352/198" />
-                        <div class="category-icon"> <i class="icon-magic"></i> </div>
-                        <div class="popularity"><i class="icon-heart"></i> 9999</div>
-                    </div>
-                    <h3>TITLE OF RESOURCE</h3>
-                    <p>Short description of resource</p>
-                    TAGS
-                    <div class="postmeta"> <span class="username"> <a href="#">AUTHOR</a></span> |
-                        <time datetime="2012-02-17" class="time-ago">a long time ago</time>
-                    </div>
-                </article>
-        </div>
-    </main>
-    <aside>
-        <nav>
-            <ul class="category-nav">
-                <!-- TODO: in no particular order, list all the categories. (custom menu? custom walker?) -->
-                <li class="3d"><a href="#"><div class="category-icon"><i class="icon-magic"></i></div> 3d</a></li>
-                <li class="typography"><a href="#"><div class="category-icon"><i class="icon-magic"></i></div> Typography</a></li>
-                <li class="web"><a href="#"><div class="category-icon"><i class="icon-magic"></i></div> Web</a></li>
-                <li class="graphic-design"><a href="#"><div class="category-icon"><i class="icon-magic"></i></div> Graphic Design</a></li>
-                <li class="photography"><a href="#"><div class="category-icon"><i class="icon-magic"></i></div> Photography</a></li>
-                <li class="video"><a href="#"><div class="category-icon"><i class="icon-magic"></i></div> Video</a></li>
-            </ul>
-        <nav>
-    </aside>
+					<div class="entry-content">
+						<p>no results were found for the requested archive. Perhaps searching will help find a related post.</p>
+						<?php get_search_form(); ?>
+					</div><!-- .entry-content -->
+				</article><!-- #post-0 -->
+
+			<?php endif; ?>		
+
+	</main>
+
+	<?php get_sidebar(); ?>
+
 </div> <!-- close .wrapper -->
+
 <?php get_footer(); ?>
