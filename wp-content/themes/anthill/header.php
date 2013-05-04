@@ -27,8 +27,9 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/normalize.min.css">
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/font-awesome.min.css">
+	<?php wp_head(); ?>
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
+	
 
 	<link rel="shortcut icon" href="<?php echo site_url(); ?>/favicon.ico" />
 </head>
@@ -43,7 +44,9 @@
 	<h3><?php  bloginfo( 'description' ); ?></h3>
 	
 	<ul class="utilities">
-		<?php wp_list_pages( array(
+		<?php 
+		// @TODO: temporary quickie nav, switch to menu system
+		wp_list_pages( array(
 		'depth' => 1,
 		'title_li' => '',
 		 ) ) ?>
