@@ -195,7 +195,10 @@ p {
 /*
 	==misc tags
 */
-
+dt{
+	font-weight: bold;
+	border-top:dotted 1px #EEE;
+}
 abbr,
 acronym {
 	border-bottom:dotted 1px #CCC;
@@ -296,7 +299,7 @@ color:#323939;
 .tile .category-icon:hover{
 	background-color: #323939;
 }
-.tilee .category-icon a {
+.tile .category-icon a {
 	color:#FFF;
 }
 .tile .category-icon a:hover{
@@ -313,6 +316,10 @@ color:#323939;
 }
 .tile .postmeta {
 	margin:1em;
+}
+.tile.no-image .category-icon{
+	position: static;
+	float: left;
 }
 .search .tile {
 	margin-right: 2%;

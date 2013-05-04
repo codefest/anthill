@@ -1,5 +1,9 @@
 <?php 
-
+/**
+ * Turn on JavaScripts
+ * @since 0.1
+ */
+add_action( 'wp_enqueue_scripts', 'anthill_js_activation' ); 
 function anthill_js_activation() {
     wp_enqueue_script( 'jquery' );
 
@@ -12,11 +16,8 @@ function anthill_js_activation() {
 		get_template_directory_uri() . '/js/main.js',
 		array( 'jquery' ),
 		false,
-		true
+		true //footer
 	);
-	 
-
 }
 
-add_action( 'wp_enqueue_scripts', 'anthill_js_activation' ); 
 ?>

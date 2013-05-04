@@ -63,7 +63,7 @@
 
 		<!-- STANDARD IMAGE TILES -->
 		<div class="tiles-list cf">
-			<!-- put a multiple .tile boxes in the .tiles-list div. use the loop --> 
+			<!-- put a multiple .tile boxes in the .tiles-list div. this container must be present for masonry to work--> 
 
 			<article class="tile cf graphic-design hentry @TODO  PUT WORDPRESS POST_CLASS HERE">
 				<div class="resource-image thumbnail">
@@ -134,12 +134,14 @@
 				
 			</article>
 
-			
+		</div> <!-- end tiles-list -->
 
-			
-
-
-		</div>
+		
+		<h3>Visual Tile Markup:</h3>
+		<script src="https://gist.github.com/melissacabral/5515382.js"></script>
+		<h3>No-image tile markup</h3>
+		<script src="https://gist.github.com/melissacabral/5515396.js"></script>
+<hr class="clear" />
 		<!-- search div is just here as a stand-in for body_class.  -->
 		<div class="search cf">
 			<h2>Search Results:</h2>
@@ -160,7 +162,10 @@
 			</article>
 		</div><!-- end .search example... do not use this div -->
 
-		<h2>Forms and baby grid</h2>
+		<h2>Search tile markup</h2>
+		<script src="https://gist.github.com/melissacabral/5515402.js"></script>
+<hr class="clear" />
+		<h3>Forms and baby grid</h3>
 		<form class="cf">
 			<div class="grid-full">
 				<div class="alert"><i class="icon-info-sign"></i> 
