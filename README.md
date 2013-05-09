@@ -22,6 +22,10 @@ The People
 * [Melissa Cabral](https://github.com/melissacabral)
 * [Joe Juette](https://github.com/jjuette)
 
+**Strategy Team**
+* [Trish Ladd](https://github.com/TrishZwei)
+* [Fred Winton](https://github.com/fishyfred)
+
 
 Getting Started: Quick Start
 ---------------
@@ -80,3 +84,6 @@ Participate
 --------------------
 
 To participate in this project, please [consult the wiki](https://github.com/codefest/anthill/wiki).
+
+A recommended resource for learning the bash
+http://git-scm.com/book
