@@ -84,3 +84,6 @@ Participate
 --------------------
 
 To participate in this project, please [consult the wiki](https://github.com/codefest/anthill/wiki).
+
+A recommended resource for learning the bash
+http://git-scm.com/book
