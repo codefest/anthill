@@ -1,0 +1,24 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Anne Dorko
+	Melissa Cabral
+	Joe Juette
+	Daryck Caldemeyer
+	Dave Downes
+	Andy Osuna
+	Fred Winton
+	Melissa Conrad
+	Spencer Schell
+	Trish Ladd
+
+# THANKS
+
+    Platt College 
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr, WordPress
