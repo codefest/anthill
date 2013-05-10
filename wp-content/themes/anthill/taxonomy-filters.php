@@ -16,23 +16,15 @@
 				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
 			</a>
 		</div>
-
+		
+		<div class="tiles-list cf masonry">
 		<?php if ( have_posts() ) : ?>
 			
 				
 				<?php while ( have_posts() ) : the_post(); ?>
-				<article>
-					<?php //@TODO  beef up these loop contents! ?>
+				
+					<?php get_template_part( 'loop', 'tiles' ); ?>
 					
-					<h1 class="entry-title">
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</h1>
-
-					<div class="entry-content">
-						<?php the_content(); ?>			
-					</div>
-				</article>
-
 				<?php endwhile; ?>				
 
 			<?php else : ?>
@@ -50,6 +42,8 @@
 
 			<?php endif; ?>		
 
+		</div> <!-- Close tiles list div -->
+		
 	</main>
 
 	<?php get_sidebar(); ?>

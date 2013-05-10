@@ -10,4 +10,19 @@ jQuery( document ).ready( function( $ ) {
     		return containerWidth / 3;
  		 }
 	} );
+	
+	$( document ).scroll(function(){
+		var top = $(this).scrollTop();
+		var categories = $('.category-nav');
+		if( top >= 130 ) {
+			categories.css({
+				position: 'fixed',
+				top: '20px'
+			});
+		} else {
+			categories.css({
+				position: 'static'
+			});
+		}
+	});
 } );

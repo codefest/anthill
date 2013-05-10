@@ -21,7 +21,7 @@ function anthill_js_activation() {
 }
 
 /**
- * Returns a <div> with the appropriate <i class="icon-{which}">
+ * @function	get_filter_icon	Returns a <div> with the appropriate <i class="icon-{which}">
  * 
  * @var	string	$slug	Expects the slug value of the filter
 */

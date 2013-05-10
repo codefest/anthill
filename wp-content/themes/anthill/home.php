@@ -16,23 +16,23 @@
 				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
 			</a>
 		</div>
-
-		<?php if ( have_posts() ) : ?>
-			
+		
+		<div class="tiles-list cf masonry">
+		<?php 
+		/** Customize the loop to show Resource post types
+		 *
+		*/
+		$args = array(
+			'post_type' => 'anthill-resources'
+		);
+		query_posts( $args );
+		
+		if ( have_posts() ) : ?>
 				
 				<?php while ( have_posts() ) : the_post(); ?>
-				<article>
-					<?php //@TODO  beef up these loop contents! ?>
+				
+					<?php get_template_part( 'loop', 'tiles' ); ?>
 					
-					<h1 class="entry-title">
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</h1>
-
-					<div class="entry-content">
-						<?php the_content(); ?>			
-					</div>
-				</article>
-
 				<?php endwhile; ?>				
 
 			<?php else : ?>
@@ -49,7 +49,7 @@
 				</article><!-- #post-0 -->
 
 			<?php endif; ?>		
-
+		</div>
 	</main>
 
 	<?php get_sidebar(); ?>
