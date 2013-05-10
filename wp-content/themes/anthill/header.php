@@ -40,9 +40,13 @@
 
 <header> 
 	<!-- @TODO  Home page gets an H1 here, all other pages use H2 -->
-	<h2><a href="/"><?php bloginfo( 'name' ); ?></a></h2>
-	<h3><?php  bloginfo( 'description' ); ?></h3>
-	
+	<div class="wrapper">
+		<div class="logo alignleft">
+			<a href="<?php bloginfo('wpurl'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anthill_logo.png" class="the_logo"></a>
+			<h2><a href="<?php bloginfo('wpurl'); ?>"><?php bloginfo( 'name' ); ?></a></h2>
+			<h3><?php  bloginfo( 'description' ); ?></h3>
+		</div>
+	</div>
 	<ul class="utilities">
 		<?php 
 		// @TODO: temporary quickie nav, switch to menu system
@@ -53,7 +57,9 @@
 		<li><a href="#">Sign Up</a></li>
 		<li><a href="#">Log in</a></li>
 	</ul>
-	<?php
-	//@TODO   beef up the searchform.php HTML to better match the comps
-	get_search_form(); ?>
+	<div class="wrapper">
+		<?php
+		//@TODO   beef up the searchform.php HTML to better match the comps
+		get_search_form(); ?>
+	</div>
 </header>

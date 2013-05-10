@@ -10,7 +10,7 @@
  * @since Anthill 0.1
  */
 ?>
-<footer>footer stuff goes here</footer>
+<footer class="wrapper">footer stuff goes here</footer>
 
 
 <?php /* @TODO all this JS is from HTML5 boilerplate and needs to be enqueued properly */ ?>

@@ -73,5 +73,3 @@ function get_filter_icon( $slug = '' ) {
 	}
 	return '<div class="category-icon ' . $class . '">' . $i . '</div>';
 }
-
-?>

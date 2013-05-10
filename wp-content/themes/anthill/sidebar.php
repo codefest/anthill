@@ -8,7 +8,7 @@
  * @since Anthill 0.1
  */
 ?>
-<aside>
+<aside class="nomargin">
 	<nav>
 		<ul class="category-nav">
 			<?php
