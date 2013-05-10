@@ -29,7 +29,14 @@ $resources_taxonomies = array(
 			),
 			'show_admin_column' => true,
 			'hierarchical' => true
-		)
+		),
+	'keywords' => array(
+			'label' => 'keywords',
+			'labels' => array(
+				'plural' => 'Keywords',
+				'single' => 'Keyword'
+			)
+	)
 );
 // Meta boxes
 $outgoing = array(

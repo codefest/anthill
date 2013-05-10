@@ -20,4 +20,58 @@ function anthill_js_activation() {
 	);
 }
 
+/**
+ * Returns a <div> with the appropriate <i class="icon-{which}">
+ * 
+ * @var	string	$slug	Expects the slug value of the filter
+*/
+function get_filter_icon( $slug = '' ) {
+	/**
+	 * @var	string	$icon	Sets an appropriate icon-name based on the Font Awesome project
+	*/
+	switch( $slug ) {
+		case 'web':
+			$icon = 'chevron';
+			break;
+		case '3d':
+			$icon = 'magic';
+			break;
+		case 'typography':
+			$icon = 'font';
+			break;
+		case 'design':
+			$icon = 'picture';
+			break;
+		case 'photography':
+			$icon = 'camera';
+			break;
+		case 'video':
+			$icon = 'facetime-video';
+			break;
+		default:
+			$icon = 'magic';
+	}
+	/**
+	 * @var	string	$class	Sets a valid class for the wrapping DIV
+	*/
+	switch( $slug ) {
+		case '3d':
+			$class = 'three-d';
+			break;
+		default:
+			$class = $slug;
+	}
+	/**
+	 * @var	string	$i	Sets an appropriate number of Font Awesome <i> tags
+	*/
+	switch( $slug ) {
+		case 'web':
+			$i = '<i class="icon-' . $icon . '-left"></i><i class="icon-' . $icon . '-right"></i>';
+			break;
+		default:
+			$i = '<i class="icon-' . $icon . '"></i>';
+	}
+	return '<div class="category-icon ' . $class . '">' . $i . '</div>';
+}
+
 ?>

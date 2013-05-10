@@ -344,10 +344,57 @@ color:#323939;
 	padding:0;
 	-webkit-border-radius: 5em;
 	border-radius: 5em;
+	border: 5px solid #29a1d3;
+	position: relative;
+	top: 5px;
+/*	ems were making the <i> icons funny
 	width: 2.5em;
-	text-align: center;
+	height: 2.5em;
+*/	width: 40px;
+	height: 40px;
 	line-height: 2.5em;
+	text-align: center;
+  	text-shadow: -1px -1px 0px #777;
+	position: relative;
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
 }
+	.category-icon i {
+		display: inline;
+		position: relative;
+		top: -4px;
+	}
+	.category-icon.three-d {
+		background-color: #a4be13;
+		border-color: #7fa30b;
+	}
+	.category-icon.typography {
+		background-color: #e22a2a;
+		border-color: #d61919;
+	}
+	.category-icon.web {
+		background-color: #e58d25;
+		border-color: #da5e16;
+	}
+		.category-icon.web i:first-child {
+		}
+		.category-icon.web i:last-child {
+			position: relative;
+			left: 1px;
+		}
+	.category-icon.design {
+		background-color: #26a4af;
+		border-color: #167f8e;
+	}
+	.category-icon.photography {
+		background-color: #6460b6;
+		border-color: #3b3898;
+	}
+	.category-icon.video {
+		background-color: #b7107a;
+		border-color: #990948;
+	}
 /*
  ==Buttons and forms
 */
