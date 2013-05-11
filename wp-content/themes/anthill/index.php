@@ -8,14 +8,6 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="wrapper">
-	<main>
-		<!-- PRIMARY ACTION BUTTON -->
-		<div class="submit-resource">
-			<a href="#" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
 
 		<?php if ( have_posts() ) : ?>
 			
@@ -54,6 +46,6 @@
 
 	<?php get_sidebar(); ?>
 
-</div> <!-- close .wrapper -->
+ 
 
 <?php get_footer(); ?>

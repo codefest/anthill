@@ -8,14 +8,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="wrapper">
-	<main>
-		<!-- PRIMARY ACTION BUTTON -->
-		<div class="submit-resource">
-			<a href="#" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
+
 		
 		<div class="tiles-list cf masonry">
 		<?php 
@@ -45,6 +38,6 @@
 
 	<?php get_sidebar(); ?>
 
-</div> <!-- close .wrapper -->
+ 
 
 <?php get_footer(); ?>

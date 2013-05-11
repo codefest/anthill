@@ -1,6 +1,6 @@
 <?php
 /**
- * default template for our theme.
+ *  template for user Profile and activity feed
  *
  * @package WordPress
  * @subpackage Anthill
@@ -8,14 +8,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="wrapper">
-	<main>
-		<!-- PRIMARY ACTION BUTTON -->
-		<div class="submit-resource">
-			<a href="#" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
+
 		
 		<h1>Resources by <?php echo get_query_var('author_name'); ?></h1>
 		<div class="search cf">
@@ -38,6 +31,6 @@
 
 	<?php get_sidebar(); ?>
 
-</div> <!-- close .wrapper -->
+ 
 
 <?php get_footer(); ?>

@@ -1,3 +1,12 @@
+<?php
+/**
+ * Loop Template Part for when no results are found
+ *
+ * @package WordPress
+ * @subpackage Anthill
+ * @since Anthill 0.1
+ */
+?>
 <article id="post-0" class="post no-results not-found hentry">
 	
 	<h2 class="entry-title">Well, we'll be darned.</h2>

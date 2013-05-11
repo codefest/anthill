@@ -1,6 +1,6 @@
 <?php
 /**
- * default template for our theme.
+ * Template for search results page
  *
  * @package WordPress
  * @subpackage Anthill
@@ -8,14 +8,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="wrapper">
-	<main>
-		<!-- PRIMARY ACTION BUTTON -->
-		<div class="submit-resource">
-			<a href="#" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
+
 		<h1>Results for <?php the_search_query(); ?></h1>
 		<div class="search cf">
 		<?php if ( have_posts() ) : ?>
@@ -38,6 +31,6 @@
 
 	<?php get_sidebar(); ?>
 
-</div> <!-- close .wrapper -->
+ 
 
 <?php get_footer(); ?>

@@ -406,6 +406,7 @@ color:#323939;
 	position: relative;
 	top: 5px;
 /*	ems were making the <i> icons funny
+	@todo  test behavior if base font size increases or decreases
 	width: 2.5em;
 	height: 2.5em;
 */	width: 40px;

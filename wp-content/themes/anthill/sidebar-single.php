@@ -1,7 +1,7 @@
 <?php
 /**
- * The left Sidebar for our theme, where main navigation is contained
- *
+ * The Right-hand Sidebar for our theme, where meta data about a resource is contained. 
+ * Used on singular views.
  * 
  * @package WordPress
  * @subpackage Anthill

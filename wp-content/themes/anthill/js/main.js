@@ -1,16 +1,19 @@
-/**
- *	Activate Masonry on the visual tiles
- *  @Since 0.1
- */
 jQuery( document ).ready( function( $ ) {
-    $( '.tiles-list' ).masonry( { 
+    /**
+	 *	Activate Masonry on the visual tiles
+	 *  @Since 0.1
+	 */
+ 	$( '.tiles-list' ).masonry( { 
 		itemSelector: '.tile',
   		// set columnWidth a fraction of the container width
  		columnWidth: function( containerWidth ) {
     		return containerWidth / 3;
  		 }
 	} );
-	
+	/**
+	 *	Sticky Sidebar Navigation
+	 *  
+	 */
 	$( document ).scroll(function(){
 		var top = $(this).scrollTop();
 		var categories = $('.category-nav');

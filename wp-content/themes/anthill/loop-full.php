@@ -1,3 +1,12 @@
+<?php
+/**
+ * Loop Template Part for full width/text page.
+ *
+ * @package WordPress
+ * @subpackage Anthill
+ * @since Anthill 0.1
+ */
+?>
 <article <?php post_class('cf hentry'); ?>>
 	<h1 class="entry-title"><?php the_title(); ?></h1>
 	<div class="resource-image thumbnail"> <img src="http://placekitten.com/352/198" alt="TITLE"/>

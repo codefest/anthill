@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <header> closes
+ * Displays all of the <head> section and everything up till the beginning of div.wrapper
  *
  * @package WordPress
  * @subpackage Anthill
@@ -63,3 +63,12 @@
 		get_search_form(); ?>
 	</div>
 </header>
+
+<div class="wrapper">
+	<main>
+		<!-- @TODO  this markup needs some work -->
+		<div class="submit-resource">
+			<a href="#" class="primary button">
+				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
+			</a>
+		</div>

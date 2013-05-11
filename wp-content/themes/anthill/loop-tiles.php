@@ -1,3 +1,13 @@
+<?php
+/**
+ * Loop Template Part for an archive-view (grid layout) tile with or without a featured image
+ *
+ * @package WordPress
+ * @subpackage Anthill
+ * @since Anthill 0.1
+ * @todo Add logic to show alternate markup if the tile does not have a featured image
+ */
+?>
 <article <?php post_class('tile cf graphic-design'); ?>>
 	<div class="resource-image thumbnail">
 			<a href="<?php the_permalink(); ?>">

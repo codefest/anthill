@@ -3,17 +3,7 @@
 ?>
 
 <?php get_header(); ?>
-<div class="wrapper">
-	<main>
-		<!-- PRIMARY ACTION BUTTON -->
-		<!-- @TODO  this markup needs some work -->
-		<div class="submit-resource">
-			<a href="#" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
 
-		<?php //@TODO  put the loop here ?>
 
 		<h1>Use H1 for page titles</h1>
 		<h2>Helper Classes</h2>
@@ -364,6 +354,6 @@
 
 		<?php get_sidebar(); ?>
 
-	</div> <!-- close .wrapper -->
+	 
 
 <?php get_footer(); ?>

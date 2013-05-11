@@ -1,6 +1,6 @@
 <?php
 /**
- * page for single post.
+ * Template for single post
  *
  * @package WordPress
  * @subpackage Anthill
@@ -8,18 +8,9 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="wrapper">
-	<main>
-		<!-- PRIMARY ACTION BUTTON -->
-		<div class="submit-resource">
-			<a href="#" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
+
 
 		<?php if ( have_posts() ) : ?>
-
-
 		<?php while ( have_posts() ) : the_post(); ?>
 		<article>
 			<?php //@TODO  beef up these loop contents! ?>
@@ -105,6 +96,6 @@
 
 <?php get_sidebar(); ?>
 
-</div> <!-- close .wrapper -->
+ 
 
 <?php get_footer(); ?>

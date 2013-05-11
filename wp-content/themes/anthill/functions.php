@@ -1,12 +1,11 @@
 <?php 
 /**
- * Turn on JavaScripts
- * @since 0.1
+ * Enqueues scripts and styles for front-end
+ * @since Anthill 0.1
  */
 add_action( 'wp_enqueue_scripts', 'anthill_js_activation' ); 
 function anthill_js_activation() {
     wp_enqueue_script( 'jquery' );
-
 	$modernizr_path = get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js';
     wp_register_script( 'modernizrjs', $modernizr_path );
     wp_enqueue_script( 'modernizrjs' );
@@ -24,6 +23,7 @@ function anthill_js_activation() {
  * @function	get_filter_icon	Returns a <div> with the appropriate <i class="icon-{which}">
  * 
  * @var	string	$slug	Expects the slug value of the filter
+ * @todo make the css class output match up with the custom icon solution
 */
 function get_filter_icon( $slug = '' ) {
 	/**
@@ -76,9 +76,11 @@ function get_filter_icon( $slug = '' ) {
 
 
 
-/** Only show icons on non-archive pages
- * 
- * This helps to avoid visually repetitive icon tiling
+/** 
+ * Show the appropriate category icon for a resource. Use within the loop. 
+ *
+ * Only displays icons on non-archive pages. 
+ * This helps to avoid visually repetitive icons when all results on a page are in the same category.
 */
 function show_loop_icon() {
 	global $post;
