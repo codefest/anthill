@@ -145,6 +145,10 @@ footer {
 	float:right;
 	font-size: 1.2em;
 }
+.submit-resource + div {
+	clear: both;
+	padding-top: 20px;
+}
 .tiles-list .tile {
 	width:31.3333333333333%;
 	margin:0 2% 2% 0;
@@ -376,6 +380,7 @@ color:#323939;
 }
 .search .tile {
 	margin-right: 2%;
+	margin: 0 0 20px 0;
 }
 .search .tile .resource-image {
 	float:right;

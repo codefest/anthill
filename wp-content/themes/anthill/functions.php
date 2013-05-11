@@ -73,3 +73,26 @@ function get_filter_icon( $slug = '' ) {
 	}
 	return '<div class="category-icon ' . $class . '">' . $i . '</div>';
 }
+
+
+
+/** Only show icons on non-archive pages
+ * 
+ * This helps to avoid visually repetitive icon tiling
+*/
+function show_loop_icon() {
+	global $post;
+	$the_post_type = get_post_type( $post );
+	if ( !is_archive() && $the_post_type == 'anthill-resources' ) {
+		/** 
+		 * Get one of the terms and use it to define the icon
+		*/
+		$term_slug = '3d';
+		$filters = get_the_terms( get_the_ID(), 'filters' );
+		if( !empty( $filters ) ) {
+			$only_one = current( $filters );
+			$term_slug = $only_one->slug;
+			echo '<a href="' . get_term_link( $only_one ) . '">' . get_filter_icon( $term_slug ) . '</a>';
+		}
+	}
+}
