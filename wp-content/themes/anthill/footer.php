@@ -11,13 +11,6 @@
  */
 ?>
 <footer class="wrapper">footer stuff goes here</footer>
-
-
-<?php /* @TODO all this JS is from HTML5 boilerplate and needs to be enqueued properly */ ?>
-
-<script src="js/plugins.js"></script> 
-<script src="js/main.js"></script> 
-
 <?php wp_footer(); ?>
 </body>
 </html>

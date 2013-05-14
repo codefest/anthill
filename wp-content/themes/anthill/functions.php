@@ -17,7 +17,13 @@ function anthill_js_activation() {
 		false,
 		true //footer
 	);
+	
+	wp_register_style( 'normalize', get_template_directory_uri() . '/css/normalize.min.css' );
+	wp_enqueue_style( 'normalize' );
+	wp_register_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome' );
 }
+
 
 /** 
  * Enables featured images
@@ -26,6 +32,44 @@ function anthill_js_activation() {
 
 add_theme_support( 'post-thumbnails', array( 'anthill-resources' ) );
 
+
+/** 
+ * A pretty title function
+ * @since Anthill 0.1
+ *
+ * Based on http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/
+ */
+function anthill_header_titles() {
+	if (function_exists('is_tag') && is_tag()) { 
+		echo 'Tag Archive for &quot;'.$tag.'&quot; - '; 
+	} elseif (is_archive()) { 
+		wp_title(''); echo ' Archive - '; 
+	} elseif (is_search()) { 
+		echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; 
+	} elseif (!(is_404()) && (is_single()) || (is_page())) { 
+		wp_title(''); echo ' - '; 
+	} elseif (is_404()) { 
+		echo 'Not Found - '; 
+	} if (is_home()) { 
+		bloginfo('name'); 
+		echo ' - '; 
+		bloginfo('description'); 
+	} else {
+		bloginfo('name'); 
+	}
+}
+
+/** 
+ * @function	set_resources_for_author	Causes author pages to query resource post types
+ *
+ * Based on http://wordpress.stackexchange.com/questions/11210/including-post-type-wiki-in-author-archives
+ */
+function set_resources_for_author( &$query ) {
+	if( $query->is_author )
+		$query->set( 'post_type', 'anthill-resources' );
+	remove_action( 'pre_get_posts', 'set_resources_for_author' ); // Run once
+}
+add_action( 'pre_get_posts', 'set_resources_for_author' );
 
 /**
  * @function	get_filter_icon	Returns a <div> with the appropriate <i class="icon-{which}">
@@ -95,7 +139,7 @@ function get_filter_icon( $slug = '' ) {
 function show_loop_icon() {
 	global $post;
 	$the_post_type = get_post_type( $post );
-	if ( !is_archive() && $the_post_type == 'anthill-resources' ) {
+	if ( !is_tax('filters') && $the_post_type == 'anthill-resources' ) {
 		/** 
 		 * Get one of the terms and use it to define the icon
 		*/

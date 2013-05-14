@@ -16,8 +16,13 @@
 			$filters = get_terms('filters', array('hide_empty' => false));
 			foreach( $filters as $f ) {
 				// Loop through and show each
+				$term = single_term_title( null, false );
+				$current = get_term_by( 'name', $term, 'filters' );
+				$class = $f->slug;
+				if ( $class == $current->slug )
+					$class .= ' current';
 				?>
-				<li class="<?php echo $f->slug; ?>"><a href="<?php echo get_term_link( $f ); ?>"><?php echo get_filter_icon($f->slug); ?> <?php echo $f->name; ?></a></li>
+				<li class="<?php echo $class; ?>"><a href="<?php echo get_term_link( $f ); ?>"><?php echo get_filter_icon($f->slug); ?> <?php echo $f->name; ?></a></li>
 				<?php
 			}
 			?>

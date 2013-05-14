@@ -20,17 +20,12 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>
-	<?php //@TODO  beef this up for SEO
-	bloginfo( 'name' ); ?>
+	<?php anthill_header_titles(); ?>
 	</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/normalize.min.css">
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/font-awesome.min.css">
 	<?php wp_head(); ?>
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-	
-
 	<link rel="shortcut icon" href="<?php echo site_url(); ?>/favicon.ico" />
 </head>
 <body <?php body_class(); ?>>
