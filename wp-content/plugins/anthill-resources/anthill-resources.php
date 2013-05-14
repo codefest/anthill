@@ -17,7 +17,8 @@ $resources_options = array(
 	'labels' => array(
 			'plural' => 'Resources',
 			'single' => 'Resource'
-		)
+		),
+	'supports' => array( 'title', 'editor', 'thumbnail' )
 );
 // Multiple taxonomies can be stored in the following using label => args as key/value pairs
 $resources_taxonomies = array(

@@ -19,12 +19,20 @@ function anthill_js_activation() {
 	);
 }
 
+/** 
+ * Enables featured images
+ * @since Anthill 0.1
+ */
+
+add_theme_support( 'post-thumbnails', array( 'anthill-resources' ) );
+
+
 /**
  * @function	get_filter_icon	Returns a <div> with the appropriate <i class="icon-{which}">
  * 
  * @var	string	$slug	Expects the slug value of the filter
  * @todo make the css class output match up with the custom icon solution
-*/
+ */
 function get_filter_icon( $slug = '' ) {
 	/**
 	 * @var	string	$icon	Sets an appropriate icon-name based on the Font Awesome project
@@ -77,10 +85,12 @@ function get_filter_icon( $slug = '' ) {
 
 
 /** 
- * Show the appropriate category icon for a resource. Use within the loop. 
+ * Show the appropriate category icon for a resource. Use within the loop. Calls on get_filter_icon()
  *
  * Only displays icons on non-archive pages. 
  * This helps to avoid visually repetitive icons when all results on a page are in the same category.
+ * @todo Make the above true only on Filter archive pages, as icons will vary on Keyword and Author 
+ * archive pages
 */
 function show_loop_icon() {
 	global $post;
@@ -96,5 +106,58 @@ function show_loop_icon() {
 			$term_slug = $only_one->slug;
 			echo '<a href="' . get_term_link( $only_one ) . '">' . get_filter_icon( $term_slug ) . '</a>';
 		}
+	}
+}
+
+/**
+ * @function	resource_keyword_list	Returns a list for the taxonomy "keywords", used in the loop
+ * 
+ * The purpose of this function is to connect all the generated HTML and CSS 
+ * for the keyword tags into one place.
+ */
+function resource_keyword_list() {
+	global $post;
+	echo get_the_term_list( get_the_ID(), 
+		'keywords', 
+		'<span class="keywords">', 
+		'</span><span class="keywords">', 
+		'</span>' );
+}
+
+/**
+ * @function	resource_image	Returns meta data about the resource, with varying HTML based on whether there is a post thumbnail
+ * 
+ * The purpose of this function is to connect all the generated HTML and CSS 
+ * for the post thumbnail and meta data into one place.
+ */
+function resource_image() {
+	global $post;
+	$size = 'medium';
+	if ( is_single() )
+		$size = 'large';
+	
+	if ( has_post_thumbnail() ) { ?>
+	<div class="resource-image thumbnail">
+		<a href="<?php the_permalink(); ?>">
+			 <?php the_post_thumbnail( $size ); ?> 
+		</a>
+	<?php } ?>
+		<!-- @TODO Make the popularity relevant -->
+		<div class="popularity"><a href="#"><i class="icon-heart"></i></a> 9999</div>
+		<?php show_loop_icon(); ?>
+	<?php if ( has_post_thumbnail() ) { ?>
+	</div>
+	<?php }
+}
+
+function resource_link_source( $perma = false ) {
+	global $post;
+	$link = get_post_meta( get_the_ID(), 'resource_url', true );
+	$breakdown = parse_url( $link );
+	extract( $breakdown );
+	if ( $perma == true ) {
+		echo '<a href="' . $link . '">' . $host . '</a>';
+	} else {
+		echo $host;
 	}
 }

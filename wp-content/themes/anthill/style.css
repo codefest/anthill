@@ -112,6 +112,7 @@ object,
 video {
 	max-width: 100%; /* @TODO  only works with ie7+ */
 	vertical-align: middle;
+	height: auto; /* Keeps images proportional at smaller sizes */
 }
 /*
   ==Basic Layout
@@ -391,6 +392,14 @@ color:#323939;
 	position: absolute;
 	bottom:1em;
 	left:-1em;
+}
+.keywords a {
+	background: #B2E0F0;
+	padding: 2px 3px;
+	margin-right: 3px;
+	color: #232929;
+	font-weight: normal;
+	font-size: .9em;
 }
 /*
  ==Icons

@@ -22,5 +22,11 @@
 			}
 			?>
 		</ul>
+		<div class="submit-resource">
+			<a href="#" class="primary button">
+				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
+			</a>
+		</div>
+		
 	</nav>
 </aside>
