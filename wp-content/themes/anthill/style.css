@@ -401,6 +401,12 @@ color:#323939;
 	bottom:1em;
 	left:-1em;
 }
+/* @TODO:  make this positioning fluid... fix the markup of the icon so the a tag is inside the div */
+.search .tile.no-image .category-icon{
+	position: absolute;
+	top: 6em;
+	left: 31em;
+}
 .keywords a {
 	background: #B2E0F0;
 	padding: 2px 3px;
