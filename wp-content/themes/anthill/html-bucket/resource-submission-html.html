@@ -1,0 +1,51 @@
+<body class="login login-action-login wp-core-ui">
+	<div id="login">
+		<h1><a href="" title="Resource Submission">Submit a Resource</a></h1>
+	
+<form name="loginform" id="loginform" action="" method="post">
+<div class="left-side">
+	<h3>Required Fields</h3>
+	<p>
+		<label for="resource_title">Title<br />
+		<input type="text" name="resource_title" id="resource_title" class="input" value="" size="20" /></label>
+	</p>
+	<p>
+		<label for="resource_url">URL to Resource<br />
+		<input type="text" name="resource_url" id="resource_url" class="input" value="" size="20" /></label>
+	</p>
+	<p>
+		<!-- span tags were placed to allow for button and associated text to be grouped and styled as one unit -->
+		<label for="primary_resource">Primary Resource Category<br />
+		<span class="radio_resource"><input type="radio" name="primary_resource" value="3d">3D</span>
+		<span class="radio_resource"><input type="radio" name="primary_resource" value="typography">Typography</span>
+		<span class="radio_resource"><input type="radio" name="primary_resource" value="code">Code</span> 
+		<span class="radio_resource"><input type="radio" name="primary_resource" value="video">Video</span>
+		<span class="radio_resource"><input type="radio" name="primary_resource" value="graphic_design">Graphic Design</span> 
+		<span class="radio_resource"><input type="radio" name="primary_resource" value="web_design">Web Design</span>
+		</label>
+
+	</p>
+	<p class="submit">
+		<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Submit" />
+		<input type="hidden" name="redirect_to" value="" />
+	</p>
+</div><!--end left-side -->
+<div class="vert-divide">| <!--vertical dividing image goes here --></div>
+<div class="right-side">
+	<h3>Optional Fields</h3>
+	<label for="resource_featured_image">Image<br/>
+		<input type="file" name="resource_featured_image" id="resource_featured_image" class="input" value="" size="20"> 
+	</label>
+	<label for="resource_tags">Source Tags <span class="description">(comma seperate tags)</span><br/>
+		<input type="text" name="resource_tags" id="resource_tags" class="input" value="" size="20"> 
+	</label>
+	<label for="resource_description">Description<br/>
+		<textarea name="resource_description" id="resource_description" class="input" rows="4" cols="30">Enter a description of your resource here.</textarea> 	
+	</label>
+	<a href="">Cancel</a>
+</div> <!--end right side -->
+</form>
+</div>
+
+
+
