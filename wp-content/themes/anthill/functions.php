@@ -273,14 +273,25 @@ function anthill_search_filter($query) {
 
 /**
  * Login Pop-up
- * trigger with <a href="#dialog" role="pop-trigger">Login</a>
+ * works with anthill_loginout()
  */
 add_action('wp_footer', 'anthill_login_popup');
 function anthill_login_popup(){ ?>
 	<div id="dialog" class="window">
 		<h3>Login to anthill!</h3>
 		<?php wp_login_form(); ?>
-		<a href="#" class="close">Cancel</a>
+		<a href="#" class="close"><i class="icon-remove-sign icon-large"></i><span class="screen-reader-text"> Close</span></a>
 	</div>
 	<div id="mask"></div>
 <? }
+/**
+ * login button with context logic
+ * use anywhere a login/logout button that triggers the modal popup is desired
+ */
+function anthill_loginout(){
+	if(!is_user_logged_in()){
+		echo '<a href="#dialog" role="pop-trigger">Login</a>';
+	}else{
+		echo '<a href="'. wp_logout_url( get_permalink() ).'" title="Logout">Logout</a>';
+	}
+}

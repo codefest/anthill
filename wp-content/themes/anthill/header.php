@@ -51,7 +51,7 @@
 		'title_li' => '',
 		 ) ) ?>
 		<li><a href="#">Sign Up</a></li>
-		<li><a href="#dialog" role="pop-trigger">Login</a></li>
+		<li><?php anthill_loginout(); ?></li>
 	</ul>
 	<div class="wrapper">
 		<?php
