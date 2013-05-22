@@ -34,7 +34,10 @@ function anthill_setup() {
 	add_image_size( 'anthill-full', 550, 1000, false );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );	
+	register_nav_menus( array(
+		'primary'=> 'Primary Menu',
+		'footer' =>'Footer Menu' 
+		));	
 }
 
 /**

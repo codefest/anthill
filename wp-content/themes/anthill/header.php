@@ -46,10 +46,11 @@
 		<?php 
 		// @TODO: temporary quickie nav, switch to menu system
 		// switching to nav will correct the positioning problem on the quickie nav. It is currently responding to the size of the view port
-		wp_list_pages( array(
-		'depth' => 1,
-		'title_li' => '',
-		 ) ) ?>
+		wp_nav_menu(array(
+			'theme_location' => 'primary',
+			'container' => '',
+			'items_wrap' => '%3$s',
+			)); ?>
 		<li><a href="#">Sign Up</a></li>
 		<li><?php anthill_loginout(); ?></li>
 	</ul>
