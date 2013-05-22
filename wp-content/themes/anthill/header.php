@@ -45,6 +45,7 @@
 	<ul class="utilities">
 		<?php 
 		// @TODO: temporary quickie nav, switch to menu system
+		// switching to nav will correct the positioning problem on the quickie nav. It is currently responding to the size of the view port
 		wp_list_pages( array(
 		'depth' => 1,
 		'title_li' => '',

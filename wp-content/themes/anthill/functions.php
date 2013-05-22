@@ -20,22 +20,16 @@ function anthill_js_activation() {
 		false,
 		true // This script is loaded in the footer
 	);
-	
 	wp_register_style( 'normalize', get_template_directory_uri() . '/css/normalize.min.css' );
 	wp_enqueue_style( 'normalize' );
 	wp_register_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'font-awesome' );
 }
-
-
 /** 
  * Enables featured images
  * @since Anthill 0.1
  */
-
 add_theme_support( 'post-thumbnails', array( 'anthill-resources' ) );
-
-
 /** 
  * A pretty title function
  * @since Anthill 0.1
@@ -63,11 +57,11 @@ function anthill_header_titles() {
 		bloginfo('name'); 
 	}
 }
-
 /** 
  * @function	set_resources_for_author	Causes author pages to query resource post types
  *
  * Based on http://wordpress.stackexchange.com/questions/11210/including-post-type-wiki-in-author-archives
+ * Function causes author pages to query resource custom post types. (Displays posts by author)
  */
 function set_resources_for_author( &$query ) {
 	if( $query->is_author )
@@ -75,12 +69,12 @@ function set_resources_for_author( &$query ) {
 	remove_action( 'pre_get_posts', 'set_resources_for_author' ); // Run once
 }
 add_action( 'pre_get_posts', 'set_resources_for_author' );
-
 /**
  * @function	get_filter_icon	Returns a <div> with the appropriate <i class="icon-{which}">
  * 
  * @var	string	$slug	Expects the slug value of the filter
  * @todo make the css class output match up with the custom icon solution
+ * @todo incorporate new custom font icons.
  */
 function get_filter_icon( $slug = '' ) {
 	/**
@@ -130,15 +124,12 @@ function get_filter_icon( $slug = '' ) {
 	}
 	return '<div class="category-icon ' . $class . '">' . $i . '</div>';
 }
-
-
-
 /** 
  * Show the appropriate category icon for a resource. Use within the loop. Calls on get_filter_icon()
  *
  * Only displays icons on non-archive pages. 
  * This helps to avoid visually repetitive icons when all results on a page are in the same category.
- * @todo Make the above true only on Filter archive pages, as icons will vary on Keyword and Author 
+ * @todo Make the above true only on Filter archive pages, as icons will vary on Keyword search and Author 
  * archive pages
 */
 function show_loop_icon() {
@@ -146,7 +137,7 @@ function show_loop_icon() {
 	$the_post_type = get_post_type( $post );
 	if ( !is_tax('filters') && $the_post_type == 'anthill-resources' ) {
 		/** 
-		 * Get one of the terms and use it to define the icon
+		 * Get one of the terms baised on ID and use it to define the correct icon that corrisponds with the term
 		*/
 		$term_slug = '3d';
 		$filters = get_the_terms( get_the_ID(), 'filters' );
@@ -157,7 +148,6 @@ function show_loop_icon() {
 		}
 	}
 }
-
 /**
  * @function	resource_keyword_list	Returns a list for the taxonomy "keywords", used in the loop
  * 
@@ -172,7 +162,6 @@ function resource_keyword_list() {
 		'</span><span class="keywords">', 
 		'</span>' );
 }
-
 /**
  * @function	resource_image	Returns meta data about the resource, with varying HTML based on whether there is a post thumbnail
  * 
