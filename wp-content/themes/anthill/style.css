@@ -497,13 +497,27 @@ button {
 	padding:.5em;
 	border:none;
 }
-.primary {
+.primary,
+button.primary {
 	margin:0;
-	padding: 0;
-	background-color: transparent;
+	padding: 0 !important;
+	background-color: transparent !important;
 	color:#FFF;
 }
-
+button#searchsubmit{
+	border:none;
+}
+button#searchsubmit i{
+	line-height: 1em;
+	padding-top:.6em;
+	min-height: 2.5em;
+	display: inline-block;
+}
+#searchform input,
+#searchform button{
+	vertical-align: bottom;
+	margin:0;
+}
 .primary i {
 	background-color: #29a1d3;/* default blue*/
 	padding:.5em .6em 0 .6em;

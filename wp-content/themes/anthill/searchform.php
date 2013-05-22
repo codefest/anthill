@@ -12,8 +12,7 @@
 ?>
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
     <div><label class="screen-reader-text" for="s">Search for:</label>
-        <input type="text" value="" name="s" id="s" />
-        <button type="submit" class="btn btn-success" id="searchsubmit">
+        <input type="text" value="" name="s" id="s" /><button type="submit" class="button primary" id="searchsubmit">
                 <i class="icon-search"></i><span class="screen-reader-text"> Search</span>
         </button>
     </div>
