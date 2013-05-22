@@ -134,10 +134,10 @@ function get_filter_icon( $slug = '' ) {
 function show_loop_icon() {
 	global $post;
 	$the_post_type = get_post_type( $post );
+	//don't show icon if we are displaying a page of only one taxonomy... looks crappy and repetitive
 	if ( !is_tax('filters') && $the_post_type == 'anthill-resources' ) {
-		/** 
-		 * Get one of the terms baised on ID and use it to define the correct icon that corrisponds with the term
-		*/
+		
+		//Get one of the terms based on ID and use it to define the correct icon that corrisponds with the term		
 		$term_slug = '3d';
 		$filters = get_the_terms( get_the_ID(), 'filters' );
 		if( !empty( $filters ) ) {
@@ -148,10 +148,10 @@ function show_loop_icon() {
 	}
 }
 /**
- * @function	resource_keyword_list	Returns a list for the taxonomy "keywords", used in the loop
- * 
  * The purpose of this function is to connect all the generated HTML and CSS 
  * for the keyword tags into one place.
+ * @function	resource_keyword_list	Returns a list for the taxonomy "keywords", used in the loop
+ * 
  */
 function resource_keyword_list() {
 	global $post;
@@ -199,24 +199,39 @@ function resource_link_source( $perma = false ) {
 	}
 }
 /**
- * add category nicenames and featured image status in post_class 
- * @author mc
+ * Filter to category nicenames and featured image status in post_class
+ *  
+ * @param $classes mixed - An array of classes that will be applied to a post
  */
-	function anthill_category_id_class($classes) {
-	    global $post;
-	    //every post gets a clearfix
-	    $classes[] = 'cf';
-	    //if it's a resource, put it in a tile
-	    if('anthill-resources' == get_post_type($post->ID))
-	   		$classes[] = 'tile';
+add_filter('post_class', 'anthill_category_id_class');
+function anthill_category_id_class($classes) {
+    global $post;
+    //every post gets a clearfix
+    $classes[] = 'cf';
+    //if it's a resource, put it in a tile
+    if('anthill-resources' == get_post_type($post->ID))
+   		$classes[] = 'tile';
 
-	   	//if it does not have a featured image, add the class  no-image
-	    if(!has_post_thumbnail($post->ID))
-			$classes[] = "no-image";
-		
-		//for convenience, add the categories to the class
-	    foreach((get_the_category($post->ID)) as $category)
-	        $classes[] = $category->category_nicename;
-	        return $classes;
+   	//if it does not have a featured image, add the class  no-image
+    if(!has_post_thumbnail($post->ID))
+		$classes[] = "no-image";
+	
+	//for convenience, add the categories to the class
+	
+    foreach(get_the_terms($post->ID, 'filters') as $category)
+        $classes[] = $category->slug;
+    //all done!
+    return $classes;
+}
+/**
+ * Omit Pages from standard search
+ */
+add_filter('pre_get_posts','anthill_search_filter');
+function anthill_search_filter($query) {
+	if ($query->is_search) {
+		$query->set('post_type', 'anthill-resources');
 	}
-	add_filter('post_class', 'anthill_category_id_class');
+	return $query;
+}
+
+
