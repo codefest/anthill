@@ -7,7 +7,7 @@
  * @since Anthill 0.1
  */
 ?>
-<article <?php post_class('cf hentry'); ?>>
+<article <?php post_class(); ?>>
 	<h1 class="entry-title"><?php the_title(); ?></h1>
 	<?php resource_image(); ?>
 	<div class="entry-meta">

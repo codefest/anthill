@@ -7,7 +7,7 @@
  * @since Anthill 0.1
  */
 ?>
-<article id="post-0" class="post no-results not-found hentry">
+<article id="post-0" class="<?php post_class(); ?>">
 	
 	<h2 class="entry-title">Well, we'll be darned.</h2>
 	

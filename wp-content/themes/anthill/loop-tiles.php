@@ -8,15 +8,8 @@
  */
 ?>
 
-<?php
-/**
- * Adds no-image class for a post without a Featured Image
- */
-$classes = 'tile cf graphic-design';
-if ( !has_post_thumbnail() )
-	$classes .= ' no-image';
-?>
-<article <?php post_class( $classes ); ?>>
+
+<article <?php post_class(); ?>>
 	<?php resource_image(); ?>
 	<h3 class="entry-title">
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

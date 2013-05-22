@@ -31,12 +31,11 @@ function anthill_js_activation() {
  */
 add_theme_support( 'post-thumbnails', array( 'anthill-resources' ) );
 /** 
- * A pretty title function
+ * Makes <title> pretty, more logical and SEO friendlier
  * @since Anthill 0.1
  *
  * Based on http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/
  * This gets called on header.php
- * anthill_header_titles function is used to generate perfect wordpress title tags without a plugin for SCO 
  */
 function anthill_header_titles() {
 	if (function_exists('is_tag') && is_tag()) { 
@@ -58,7 +57,7 @@ function anthill_header_titles() {
 	}
 }
 /** 
- * @function	set_resources_for_author	Causes author pages to query resource post types
+ * Forces author (profile) pages to query resource post-types instead of default posts
  *
  * Based on http://wordpress.stackexchange.com/questions/11210/including-post-type-wiki-in-author-archives
  * Function causes author pages to query resource custom post types. (Displays posts by author)
@@ -199,3 +198,25 @@ function resource_link_source( $perma = false ) {
 		echo $host;
 	}
 }
+/**
+ * add category nicenames and featured image status in post_class 
+ * @author mc
+ */
+	function anthill_category_id_class($classes) {
+	    global $post;
+	    //every post gets a clearfix
+	    $classes[] = 'cf';
+	    //if it's a resource, put it in a tile
+	    if('anthill-resources' == get_post_type($post->ID))
+	   		$classes[] = 'tile';
+
+	   	//if it does not have a featured image, add the class  no-image
+	    if(!has_post_thumbnail($post->ID))
+			$classes[] = "no-image";
+		
+		//for convenience, add the categories to the class
+	    foreach((get_the_category($post->ID)) as $category)
+	        $classes[] = $category->category_nicename;
+	        return $classes;
+	}
+	add_filter('post_class', 'anthill_category_id_class');
