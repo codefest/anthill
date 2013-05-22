@@ -1,10 +1,47 @@
-<?php 
+<?php
+/**
+ * Anthill Theme functions and definitions
+ *
+ * Sets up the theme and provides some helper functions. Some helper functions
+ * are used in the theme as custom template tags. Others are attached to action and
+ * filter hooks in WordPress to change core functionality.
+ *
+ * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
+ *
+ * @package WordPress
+ * @subpackage Anthill
+ * @since Anthill 0.1
+ */
+
+
+/** 
+ * Turn on basic theme support, and menus
+ * @since Anthill 0.5
+ */
+add_action( 'after_setup_theme', 'anthill_setup' );
+function anthill_setup() {
+	// This theme styles the visual editor with editor-style.css to match the theme style.
+	add_editor_style();
+
+	// Adds RSS feed links to <head> for posts and comments.
+	add_theme_support( 'automatic-feed-links' );
+	
+	// This theme uses a custom image size for featured images, displayed on "standard" posts.
+	add_theme_support( 'post-thumbnails', array( 'anthill-resources' ) );
+	
+	//image sizes
+	add_image_size( 'anthill-small-tile', 300, 193, true );
+	add_image_size( 'anthill-full', 550, 1000, false );
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );	
+}
+
 /**
  * Enqueues scripts and styles for front-end
+ * anthill_js_activation function is used to activate and register all of the Java Script used as well as activating css styles. -JJ
+ * 
  * @since Anthill 0.1
- *
- *anthill_js_activation function is used to activate and register all of the Java Script used as well as activating css styles. 
- *
  */
 add_action( 'wp_enqueue_scripts', 'anthill_js_activation' ); 
 function anthill_js_activation() {
@@ -25,11 +62,7 @@ function anthill_js_activation() {
 	wp_register_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'font-awesome' );
 }
-/** 
- * Enables featured images
- * @since Anthill 0.1
- */
-add_theme_support( 'post-thumbnails', array( 'anthill-resources' ) );
+
 /** 
  * Makes <title> pretty, more logical and SEO friendlier
  * @since Anthill 0.1
@@ -69,9 +102,9 @@ function set_resources_for_author( &$query ) {
 }
 add_action( 'pre_get_posts', 'set_resources_for_author' );
 /**
- * @function	get_filter_icon	Returns a <div> with the appropriate <i class="icon-{which}">
+ * Returns a <div> with the appropriate <i class="icon-{which}">
  * 
- * @var	string	$slug	Expects the slug value of the filter
+ * @var	string	$slug	pass the slug value of the filter
  * @todo make the css class output match up with the custom icon solution
  * @todo incorporate new custom font icons.
  */
@@ -179,14 +212,17 @@ function resource_image() {
 			 <?php the_post_thumbnail( $size ); ?> 
 		</a>
 	<?php } ?>
-		<!-- @TODO Make the popularity relevant -->
+		<!-- @TODO Make the popularity legit -->
 		<div class="popularity"><a href="#"><i class="icon-heart"></i></a> 9999</div>
 		<?php show_loop_icon(); ?>
 	<?php if ( has_post_thumbnail() ) { ?>
 	</div>
 	<?php }
 }
-
+/**
+ * dissect the resource_url meta and return the host name
+ * @param $perma boolean - true = make it return a link, false = no link, just return the host name
+ */
 function resource_link_source( $perma = false ) {
 	global $post;
 	$link = get_post_meta( get_the_ID(), 'resource_url', true );
@@ -224,7 +260,8 @@ function anthill_category_id_class($classes) {
     return $classes;
 }
 /**
- * Omit Pages from standard search
+ * Omit standard Posts & Pages from standard search
+ * 
  */
 add_filter('pre_get_posts','anthill_search_filter');
 function anthill_search_filter($query) {
