@@ -2,6 +2,9 @@
 /**
  * Enqueues scripts and styles for front-end
  * @since Anthill 0.1
+ *
+ *anthill_js_activation function is used to activate and register all of the Java Script used as well as activating css styles. 
+ *
  */
 add_action( 'wp_enqueue_scripts', 'anthill_js_activation' ); 
 function anthill_js_activation() {
@@ -15,7 +18,7 @@ function anthill_js_activation() {
 		get_template_directory_uri() . '/js/main.js',
 		array( 'jquery' ),
 		false,
-		true //footer
+		true // This script is loaded in the footer
 	);
 	
 	wp_register_style( 'normalize', get_template_directory_uri() . '/css/normalize.min.css' );
@@ -38,6 +41,8 @@ add_theme_support( 'post-thumbnails', array( 'anthill-resources' ) );
  * @since Anthill 0.1
  *
  * Based on http://perishablepress.com/how-to-generate-perfect-wordpress-title-tags-without-a-plugin/
+ * This gets called on header.php
+ * anthill_header_titles function is used to generate perfect wordpress title tags without a plugin for SCO 
  */
 function anthill_header_titles() {
 	if (function_exists('is_tag') && is_tag()) { 

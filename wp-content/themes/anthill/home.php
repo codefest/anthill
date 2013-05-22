@@ -24,13 +24,13 @@
 				
 				<?php while ( have_posts() ) : the_post(); ?>
 				
-					<?php get_template_part( 'loop', 'tiles' ); ?>
+					<?php get_template_part( 'loop', 'tiles' ); //This will go and get the file loop-tiles.php ?>
 					
 				<?php endwhile; ?>				
 
 			<?php else : ?>
 
-				<?php get_template_part( 'loop', 'empty' ); ?>
+				<?php get_template_part( 'loop', 'empty' ); //This will go and get the gile loop-empty.php ?>
 
 			<?php endif; ?>		
 		</div>

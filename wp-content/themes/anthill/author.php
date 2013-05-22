@@ -16,23 +16,23 @@
 		
 		<h1><?php echo get_avatar( $author->email, 84 ); ?> Resources by <?php echo $author->user_nicename; ?></h1>
 		
-		<div class="search cf">
+		<div class=" cf"> <?php //TODO create class for profile after wireframe is done  ?>
 		<?php if ( have_posts() ) : ?>
 			
 				
 				<?php while ( have_posts() ) : the_post(); ?>
 				
-					<?php get_template_part( 'loop','wide' ); ?>
+					<?php get_template_part( 'loop','wide' ); //Goes and gets the file loop-wide.php ?>
 
 				<?php endwhile; ?>				
 
 			<?php else : ?>
 
-				<?php get_template_part( 'loop', 'empty' ); ?>
+				<?php get_template_part( 'loop', 'empty' ); //Goes and gets the file loop-empty.php ?>
 
 			<?php endif; ?>		
-		</div>
-	</main>
+		</div> <!-- Closes Users Profile-->
+	</main> <!-- Close main sectioning element -->
 
 	<?php get_sidebar(); ?>
 
