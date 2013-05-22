@@ -54,7 +54,7 @@
 	</ul>
 	<div class="wrapper">
 		<?php
-		//@TODO   beef up the searchform.php HTML to better match the comps
+		//@TODO  Create and beef up the searchform.php HTML to better match the comps 
 		get_search_form(); ?>
 	</div>
 </header>
