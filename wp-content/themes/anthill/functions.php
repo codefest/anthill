@@ -286,7 +286,7 @@ function anthill_login_popup(){ ?>
 		<a href="#" class="close"><i class="icon-remove-sign icon-large"></i><span class="screen-reader-text"> Close</span></a>
 	</div>
 	<div id="mask"></div>
-<? }
+<?php }
 /**
  * login button with context logic
  * use anywhere a login/logout button that triggers the modal popup is desired
