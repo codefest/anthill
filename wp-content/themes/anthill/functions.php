@@ -271,4 +271,16 @@ function anthill_search_filter($query) {
 	return $query;
 }
 
-
+/**
+ * Login Pop-up
+ * trigger with <a href="#dialog" role="pop-trigger">Login</a>
+ */
+add_action('wp_footer', 'anthill_login_popup');
+function anthill_login_popup(){ ?>
+	<div id="dialog" class="window">
+		<h3>Login to anthill!</h3>
+		<?php wp_login_form(); ?>
+		<a href="#" class="close">Cancel</a>
+	</div>
+	<div id="mask"></div>
+<? }

@@ -51,7 +51,7 @@
 		'title_li' => '',
 		 ) ) ?>
 		<li><a href="#">Sign Up</a></li>
-		<li><a href="#">Log in</a></li>
+		<li><a href="#dialog" role="pop-trigger">Login</a></li>
 	</ul>
 	<div class="wrapper">
 		<?php

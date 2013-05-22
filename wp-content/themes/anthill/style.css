@@ -487,7 +487,9 @@ color:#323939;
 .button,
 input[type=submit],
 input[type=button],
-button {
+button,
+
+#wp-submit {
 	background-color: #eaeded;
 	display: inline-block;
 	line-height: 1em;
@@ -503,6 +505,11 @@ button.primary {
 	padding: 0 !important;
 	background-color: transparent !important;
 	color:#FFF;
+}
+
+#wp-submit{
+	background-color: #29a1d3;/* default blue*/
+	padding:.5em ;
 }
 button#searchsubmit{
 	border:none;
@@ -544,6 +551,7 @@ button.primary {
 	border-bottom: none;
 }
 input[type=text],
+input[type=password],
 input[type=tel],
 input[type=email],
 input[type=color],
@@ -578,6 +586,24 @@ input[type="radio"]{
 	color: #8d9292;
 }
 
+/* Z-index of #mask must lower than #boxes .window */
+#mask {
+  position:absolute;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+  top:0;
+  left:0;
+}
+  
+ .window {
+  position:fixed;
+  width:440px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+  background-color:#EEE;
+}
 /*
 == alerts
 */

@@ -1,6 +1,6 @@
 <?php
 /**
- * default template for our theme.
+ * Submit Resource Form
  *
  * @package WordPress
  * @subpackage Anthill
