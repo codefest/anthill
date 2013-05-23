@@ -111,7 +111,7 @@ add_action( 'pre_get_posts', 'set_resources_for_author' );
  * @todo make the css class output match up with the custom icon solution
  * @todo incorporate new custom font icons.
  */
-function get_filter_icon( $slug = '' ) {
+function anne_get_filter_icon( $slug = '' ) {
 	/**
 	 * @var	string	$icon	Sets an appropriate icon-name based on the Font Awesome project
 	*/
@@ -157,6 +157,57 @@ function get_filter_icon( $slug = '' ) {
 		default:
 			$i = '<i class="icon-' . $icon . '"></i>';
 	}
+	return '<div class="category-icon ' . $class . '">' . $i . '</div>';
+}
+/**
+ * Melissa's attempt at integrating brian's icons
+ */
+function get_filter_icon( $slug = '' ) {
+	/**
+	 * @var	string	$icon	Sets an appropriate icon-name based on the Font Awesome project
+	*/
+	switch( $slug ) {
+		case 'web':
+			$class = 'web';
+			$icon = '&#xe003;';
+		break;
+		case '3d':
+			$class = 'threed';
+			$icon = '&#xe005;';
+		break;
+		case 'typography':
+			$class = 'typography';
+			$icon = '&#xe001;';
+		break;
+		case 'design':
+			$class = 'graphicdesign';
+			$icon = '&#xe004;';
+		break;
+		case 'photography':
+			$class = 'photography';
+			$icon = '&#xe002;';
+		break;
+		case 'video':
+			$class = 'video';
+			$icon = '&#xe000;';
+		break;
+		default:
+			$class = 'graphicdesign'; //TODO : come up with 'generic' icon
+			$icon = '&#xe004;';
+	}
+	/**
+	 * @var	string	$class	Sets a valid class for the wrapping DIV
+	*/
+	switch( $slug ) {
+		case '3d':
+			$class = 'three-d';
+			break;
+		default:
+			$class = $slug;
+	}
+	
+	$i = '<i data-icon="'.$icon.'" class="'.$class.'"></i>';
+	
 	return '<div class="category-icon ' . $class . '">' . $i . '</div>';
 }
 /** 
