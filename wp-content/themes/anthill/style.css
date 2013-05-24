@@ -461,20 +461,19 @@ end new icons
 	border-radius: 5em;
 }
 .category-icon {
-	background-color:#29a1d3; /*default blue*/
+	background-color: #29A1D3;
 	display: inline-block;
-	color:#FFF;
-	padding:0;
+	color: #FFF;
+	padding: 0;
 	-webkit-border-radius: 5em;
 	border-radius: 5em;
-	border: 5px solid #29a1d3;
-	position: relative;
+	border: 4px solid #29A1D3;
 	width: 40px;
 	height: 40px;
-	line-height: 2.5em;
+	line-height: 27px;
 	text-align: center;
-  	text-shadow: -1px -1px 0px #777;
 	position: relative;
+	text-shadow: -1px -1px 0px #777;
     -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -482,7 +481,6 @@ end new icons
 	.category-icon i {
 		display: inline;
 		position: relative;
-		top: -4px;
 	}
 	.category-icon.three-d {
 		background-color: #a4be13;
@@ -496,24 +494,31 @@ end new icons
 		background-color: #e58d25;
 		border-color: #da5e16;
 	}
-		.category-icon.web i:first-child {
-		}
-		.category-icon.web i:last-child {
-			position: relative;
-			left: 1px;
+		.category-icon.web i {
+			top: -2px;
 		}
 	.category-icon.design {
 		background-color: #26a4af;
 		border-color: #167f8e;
 	}
+		.category-icon.design i {
+			top: -2px;
+		}
 	.category-icon.photography {
 		background-color: #6460b6;
 		border-color: #3b3898;
 	}
+		.category-icon.photography i {
+			font-size: 1.8em;
+			top: 1px;
+		}
 	.category-icon.video {
 		background-color: #b7107a;
 		border-color: #990948;
 	}
+		.category-icon.video i {
+			top: -2px;
+		}
 /*
  ==Buttons and forms
 */
