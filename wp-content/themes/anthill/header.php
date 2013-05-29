@@ -34,15 +34,27 @@
 <![endif]-->
 
 <header> 
-	<!-- @TODO  Home page gets an H1 here, all other pages use H2 -->
+	<?php if(is_home()){
+		$tag='h1';
+	}else{
+		$tag='h2';
+	} ?>
 	<div class="wrapper">
-		<div class="logo alignleft">
+		<div class="logo">
 			<a href="<?php bloginfo('wpurl'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/anthill_logo.png" class="the_logo"></a>
-			<h2><a href="<?php bloginfo('wpurl'); ?>"><?php bloginfo( 'name' ); ?></a></h2>
+			<<?php echo $tag; ?>>
+				<a href="<?php bloginfo('wpurl'); ?>"><?php bloginfo( 'name' ); ?></a>
+			</<?php echo $tag; ?>>
 			<h3><?php  bloginfo( 'description' ); ?></h3>
 		</div>
+		<?php
+		//@TODO  Create and beef up the searchform.php HTML to better match the comps 
+		get_search_form(); ?>
 	</div>
-	<ul class="utilities">
+	<div class="utilities">
+	<a id="menu-link"><i class="icon-reorder"></i> Menu</a>
+	<ul>
+		
 		<?php 
 		// @TODO: temporary quickie nav, switch to menu system
 		// switching to nav will correct the positioning problem on the quickie nav. It is currently responding to the size of the view port
@@ -54,11 +66,10 @@
 		<li><a href="#">Sign Up</a></li>
 		<li><?php anthill_loginout(); ?></li>
 	</ul>
-	<div class="wrapper">
-		<?php
-		//@TODO  Create and beef up the searchform.php HTML to better match the comps 
-		get_search_form(); ?>
 	</div>
+	
+		
+	
 </header>
 
 <div class="wrapper">

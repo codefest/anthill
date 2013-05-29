@@ -2,12 +2,19 @@ jQuery( document ).ready( function( $ ) {
     /**
 	 *	Activate Masonry on the visual tiles
 	 *  @Since 0.1
+	 * responsive additions via http://osvaldas.info/responsive-jquery-masonry-or-pinterest-style-layout
 	 */
+	var columns    = 3,
+    setColumns = function() { columns = $( window ).width() > 640 ? 3 : $( window ).width() > 320 ? 2 : 1; };
+ 
+    setColumns();
+    $( window ).resize( setColumns );
+
  	$( '.tiles-list' ).masonry( { 
 		itemSelector: '.tile',
   		// set columnWidth a fraction of the container width
  		columnWidth: function( containerWidth ) {
-    		return containerWidth / 3;
+    		return containerWidth / columns;
  		 }
 	} );
 	/**
