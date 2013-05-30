@@ -4,7 +4,7 @@ jQuery( document ).ready( function( $ ) {
 	 *  @Since 0.1
 	 * responsive additions via http://osvaldas.info/responsive-jquery-masonry-or-pinterest-style-layout
 	 */
-	var columns    = 3,
+	var columns = 3,
     setColumns = function() { columns = $( window ).width() > 640 ? 3 : $( window ).width() > 320 ? 2 : 1; };
  
     setColumns();
@@ -12,6 +12,7 @@ jQuery( document ).ready( function( $ ) {
 
  	$( '.tiles-list' ).masonry( { 
 		itemSelector: '.tile',
+		isAnimated: true,
   		// set columnWidth a fraction of the container width
  		columnWidth: function( containerWidth ) {
     		return containerWidth / columns;
@@ -24,7 +25,7 @@ jQuery( document ).ready( function( $ ) {
 	$( document ).scroll(function(){
 		var top = $(this).scrollTop();
 		var categories = $('.category-nav');
-		if( top >= 130 ) {
+		if( top >= 130 && $( window ).width() > 640) {
 			categories.css({
 				position: 'fixed',
 				top: '20px'

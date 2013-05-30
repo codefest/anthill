@@ -256,11 +256,12 @@ function resource_keyword_list() {
  */
 function resource_image() {
 	global $post;
-	$size = 'medium';
+	$size = 'anthill-small-tile';
 	if ( is_single() )
-		$size = 'large';
+		$size = 'anthill-full';
 	
 	if ( has_post_thumbnail() ) { ?>
+	<?php show_loop_icon(); ?>
 	<div class="resource-image thumbnail">
 		<a href="<?php the_permalink(); ?>">
 			 <?php the_post_thumbnail( $size ); ?> 
@@ -268,7 +269,7 @@ function resource_image() {
 	<?php } ?>
 		<!-- @TODO Make the popularity legit -->
 		<div class="popularity"><a href="#"><i class="icon-heart"></i></a> 9999</div>
-		<?php show_loop_icon(); ?>
+		
 	<?php if ( has_post_thumbnail() ) { ?>
 	</div>
 	<?php }
