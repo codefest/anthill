@@ -357,3 +357,119 @@ function anthill_loginout(){
 		echo '<a href="'. wp_logout_url( get_permalink() ).'" title="Logout">Logout</a>';
 	}
 }
+
+
+/**
+ * Callback for accepting and saving new resources from anywhere
+ * @TODO Convert for AJAX
+ * 
+ * Returns
+ * 	- false, if nothing was submitted
+ * 	- true, if successfully created
+ * 	- errors array, if problems are found
+ */
+
+function anthill_process_new_resource() {
+	global $_POST;
+	# Return as false if there is no POST information OR if there is no resource title (meaning it's likely not even a POST for a resource submission)
+	if ( empty( $_POST ) || !isset( $_POST['resource_title'] ) )
+		return false;
+	
+	# Convert all of the POST indexes to variable names
+	extract( $_POST );
+	
+	# Security check! Check nonce to make sure that this is a valid incoming submission, and make sure the user is logged in
+	if( !wp_verify_nonce( $_wpnonce, 'new_resource') || !is_user_logged_in() )
+		die( 'Security check' );
+	
+	# Okay we made it through, let's run some basic validations and then create the new resource
+	if( strlen( $resource_title ) < 3 )
+		$errors[] = 'Please add a valid title.';
+	
+	$url = parse_url( $resource_link );
+	if ( empty($resource_link) || !$url )
+		$errors[] = 'Please provide a valid URL';
+
+	if ( $url['scheme'] != 'http' && $url['scheme'] != 'https' )
+		$resource_link = 'http://' . $resource_link;
+	
+	if( !anthill_check_url( $resource_link ) )
+		$errors[] = 'Please provide a URL currently available online';
+	
+	if( !$resource_filter )
+		$errors[] = 'Please select a filter for your resource';
+	
+	# Check for general errors
+	if( $errors )
+		return $errors;
+	
+	
+	# Create keywords taxonomy array
+	$keywords = array();
+	if( !empty( $resource_keywords ) ) {
+		/*
+			Separate by commas
+			Clean whitespace surrounding each phrase or keyword
+			Strip any code
+		*/
+		$keys = explode( ',', $resource_keywords );
+		foreach( $keys as $k ) {
+			$clean = wp_strip_all_tags( trim( $k ) );
+			$keywords[] = $clean;
+		}
+	}
+	
+	# Create the array of unique data about this resource
+	$the_resource = array(
+		'post_title'  => wp_strip_all_tags( $resource_title ),
+		'post_status' => 'publish',
+		'post_type'   => 'anthill-resources',
+		'tax_input' => array( 'keywords' => $keywords )
+	);
+	
+	if ( !empty( $resource_description ) )
+		$the_resource['post_content'] = $resource_description;
+	
+	# Add the resource and get the ID so that we can also save the meta data which is the link
+	$r_id = wp_insert_post( $the_resource, true );
+	
+	# Add the filter
+	wp_set_object_terms( $r_id, $resource_filter, 'filters' );
+	
+	# Save the resource link
+	add_post_meta( $r_id, 'resource_url', $resource_link );
+	
+	# Redirect to view the new resource link
+	$link = get_permalink( $r_id );
+    wp_redirect( $link );
+}
+
+/**
+ * Quick function to ping a URL to check whether it is a valid webpage
+ * @TODO create a way to return redirected urls rather than allowing for them outright... this will also help avoid people offering up redirected affiliate links (won't work for all, but those of which are redirects anyways!)
+ *
+ * Based on http://www.wrichards.com/blog/2009/05/php-check-if-a-url-exists-with-curl/
+ */
+
+function anthill_check_url( $url = null ) {
+	# Return false if no URL provided
+	if ( $url == null )
+		return false;
+	
+
+	# Let's curl! 
+	$ch = curl_init( $url );
+    curl_setopt( $ch, CURLOPT_TIMEOUT, 5 );
+	curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, 5 );
+	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+	$data = curl_exec( $ch );
+    $httpcode = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+    curl_close( $ch );
+	
+	# Check our http responses... allow for URLs that redirect (for now)
+	if( $httpcode >= 200 && $httpcode < 400 ) {
+		return true;
+	} else {
+		return false;
+	}
+}

@@ -28,7 +28,7 @@
 			?>
 		</ul>
 		<div class="submit-resource">
-			<a href="#" class="primary button">
+			<a href="/submit/" class="primary button">
 				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
 			</a>
 		</div>

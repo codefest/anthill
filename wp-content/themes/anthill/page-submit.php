@@ -6,6 +6,8 @@
  * @subpackage Anthill
  * @since Anthill 0.1
  */
+
+$resource_errors = anthill_process_new_resource();
 ?>
 <?php get_header(); ?>
 
@@ -22,13 +24,24 @@
 						<?php the_content(); ?>			
 					</div>
 					<?php if ( is_user_logged_in() ) { ?>
-					<?php var_dump( $_POST ); ?>
-					<form action="#" method="POST">
+						<?php
+						if ( $resource_errors ) {
+							foreach( $resource_errors as $er ) {
+								?>
+								<div class="alert error"><i class="icon-remove-sign"></i> <?php echo $er; ?></div>
+								<?php
+							}
+						}
+						?>
+					<form action="#" method="POST" name="new_resource" id="new_resource">
 						<label for="resource_title">Title</label>
-						<input id="resource_title" name="resource_title" required="" type="text" placeholder="Descriptive title">
+						<input id="resource_title" name="resource_title" required="" type="text" placeholder="Descriptive title" value="<?php echo $_POST['resource_title']; ?>">
 						
 						<label for="resource_link">Link</label>
-						<input id="resource_link" name="resource_link" required="" type="text" placeholder="http://">
+						<input id="resource_link" name="resource_link" required="" type="url" placeholder="http://" value="<?php echo $_POST['resource_link']; ?>">
+						
+						<label for="resource_description">Tell us about this resource</label>
+						<textarea name="resource_description"><?php echo $_POST['resource_description']; ?></textarea>
 						
 						<div class="form_left">
 							<label>Sort under...</label>
@@ -43,6 +56,13 @@
 							}
 							?>
 						</div>
+						
+						<div class="form_right">
+							<label for="resource_keywords">Keywords (comma separated)</label>
+							<input type="text" name="resource_keywords" placeholder="e.g. typography, web, colors" value="<?php echo $_POST['resource_keywords']; ?>">
+						</div>
+						
+						<?php wp_nonce_field( 'new_resource' ); ?>
 						
 						<input type="submit" name="submit_resource" value="Submit Resource" id="submit_resource">
 					</form>
