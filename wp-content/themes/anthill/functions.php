@@ -54,6 +54,13 @@ function anthill_js_activation() {
     wp_enqueue_script( 'modernizrjs' );
     wp_enqueue_script( 'jquery-masonry' );
     wp_enqueue_script(
+		'jquery-simplemodal',
+		get_template_directory_uri() . '/js/vendor/jquery.simplemodal.js',
+		array( 'jquery' ),
+		false,
+		true // This script is loaded in the footer
+	);
+    wp_enqueue_script(
 		'main-js',
 		get_template_directory_uri() . '/js/main.js',
 		array( 'jquery' ),
