@@ -22,16 +22,11 @@
 				if ( $class == $current->slug )
 					$class .= ' current';
 				?>
-				<li class="<?php echo $class; ?>"><a href="<?php echo get_term_link( $f ); ?>"><?php echo get_filter_icon($f->slug); ?> <?php echo $f->name; ?></a></li>
+				<li class="<?php echo $class; ?>"><a href="<?php echo get_term_link( $f ); ?>"><?php echo get_filter_icon($f->slug); ?> <span class="filter-name"><?php echo $f->name; ?></span></a></li>
 				<?php
 			}
 			?>
 		</ul>
-		<div class="submit-resource">
-			<a href="<?php echo home_url('/submit/'); ?>" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
 		
 	</nav>
 </aside>

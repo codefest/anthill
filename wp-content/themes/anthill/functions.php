@@ -473,3 +473,23 @@ function anthill_check_url( $url = null ) {
 		return false;
 	}
 }
+/**
+ * Submit Resource Button
+ * @param $style string: 	'button' 	=> Button Style
+ *							'tile' 		=> Tile Style 
+ */
+function anthill_submit_resource_button($style = button){
+	$wrapper = 'submit-resource';
+	$class='primary button';
+	if($style == 'tile'){
+		$wrapper = 'submit-resource tile';
+		$class="";
+	}
+	?>
+	<div class="submit-resource <?php echo $wrapper; ?>">
+			<a href="<?php echo home_url('/submit/'); ?>" class="<?php echo $class; ?>">
+				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
+			</a>
+	</div>
+	<?php
+}

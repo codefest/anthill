@@ -7,9 +7,8 @@
  * @since Anthill 0.1
  */
 ?>
-
-
 <article <?php post_class(); ?>>
+
 	<?php resource_image(); ?>
 	<h3 class="entry-title">
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

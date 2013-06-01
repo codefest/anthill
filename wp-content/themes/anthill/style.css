@@ -147,9 +147,16 @@ footer {
 	clear:both;
 }
 .submit-resource {
-	float:right;
 	font-size: 1.2em;
 }
+.submit-resource.tile{
+	border:dashed 3px #e6e6e6 ;
+	background-color: #eee;
+	margin:0 0 1em;
+	padding:.7em;
+	text-align: center;
+}
+
 .submit-resource + div {
 	clear: both;
 	padding-top: 20px;
@@ -264,9 +271,7 @@ header #searchform input[type=text] {
 	display: inline-block;
 	width: 88%;
 }
-main .submit-resource{
-	display: none;
-}
+
 
 /*
 ==Navigation
@@ -307,17 +312,28 @@ nav ul li {
 	color:#FFF;
 }
 .category-nav {
-	padding-top: 20px;
-	background: url('images/categories_bg.png') -20px -140px no-repeat;
+	padding: 1.25em 0;
+	
+}
+.category-nav li{
+	display:inline-block;
+	text-align: center;
+	margin:0;
+	padding:0;
+	width:15%;
 }
 .category-nav a{
 	-webkit-border-radius: 2em;
 	border-radius: 2em;
-	padding:1em 1em 1em .5em;	
+	
 }
 .category-nav a:hover, .category-nav .current a {
 	background-color: #e8ebeb;
 	color:#323939;
+}
+/* hide the text on the category nav for small screens */
+.category-nav .filter-name{
+	display:none; 
 }
 /*
 ==Visual Tile
@@ -327,6 +343,7 @@ nav ul li {
 	border:solid 1px #e1e3e3;
 	position: relative;
 	width:100%;
+	overflow:hidden;
 
 	
 }
@@ -336,7 +353,7 @@ nav ul li {
 .tiles-list .resource-image {
 	display: block;
 	overflow: hidden;
-	height: 150px;
+	maxheight: 50%;
 }
 .tiles-list .resource-image img {
 	width: 100%;
@@ -809,6 +826,18 @@ input[type="radio"]{
 		width:31.3%;
 		margin:0 .5% 2% .5%;
 		float:left;
+	}
+	.category-nav{
+		background: url('images/categories_bg.png') -20px -140px no-repeat;
+
+	}
+	.category-nav li{
+		width:auto;
+		display: block;
+		text-align: left;
+	}
+	.category-nav .filter-name{
+		display:inline;
 	}
 }
 @media print,  (-o-min-device-pixel-ratio: 5/4),  (-webkit-min-device-pixel-ratio: 1.25),  (min-resolution: 120dpi) {

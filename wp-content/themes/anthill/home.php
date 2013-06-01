@@ -11,6 +11,7 @@
 <?php get_sidebar(); ?>
 	<main>		
 		<div class="tiles-list cf masonry">
+		<?php anthill_submit_resource_button('tile'); ?>
 		<?php 
 		/** Customize the loop to show Resource post types
 		 *
@@ -23,6 +24,7 @@
 		if ( have_posts() ) : ?>
 				
 				<?php while ( have_posts() ) : the_post(); ?>
+				
 				
 					<?php get_template_part( 'loop', 'tiles' ); //This will go and get the file loop-tiles.php ?>
 					
