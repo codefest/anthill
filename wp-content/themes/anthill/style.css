@@ -545,6 +545,7 @@ button.primary {
 	padding: 0 !important;
 	background-color: transparent !important;
 	color:#FFF;
+	font-family:  Raleway, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 #wp-submit{
@@ -564,6 +565,15 @@ button#searchsubmit i{
 #searchform button{
 	vertical-align: bottom;
 	margin:0;
+}
+.primary.solid{
+	background-color: #26a4af !important;
+	border-bottom: solid 4px #11636f;
+	padding: .25em 1em !important;
+	text-shadow: 0 -1px 0 #117182;
+	font-weight: bold;
+	display: inline-block;
+	width: 100%
 }
 .primary i {
 	background-color: #29a1d3;/* default blue*/
@@ -605,15 +615,34 @@ input[type=search],
 input[type=time],
 input[type=url],
 input[type=week],
+input[type=file],
 textarea{
 	font-family: Inconsolata, "Courier New", Courier, monospace;
 	width: 100%;
 	font-size: 1.125em; /* 18/16 */
-	padding: .4em;
+	padding: .5em;
+	background-color:#f7fafa;
+	border:solid 1px #c5c9c9;
+	border-bottom:solid 1px #FFF;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1); 
+}
+textarea.resource-description{
+	min-height:10em;
+}
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus{
+	background-color: #f2ffff;
+	box-shadow: inset 0px 0px 10px 0px #dce7e8; 
+	border-color:#b5c9c9;
+	outline:none;
+
 }
 label{
 	display: block;
-	margin:1em 0 .2em;
+	padding:1em 0 .2em;
 	font-weight: 600;
 }
 /* @TODO  Fancy CSS Checkbox/Radio/File upload image replacement technique */
@@ -622,9 +651,43 @@ input[type="radio"]{
 	margin-right: .5em;
 	display: inline-block;
 }
+
 .hint{
 	color: #8d9292;
 }
+
+.bubble{
+	background-color:#29A1D3;
+	padding:.25em .25em .25em 1em;
+	-webkit-border-radius: 50px;    
+    border-radius: 50px;
+    margin-bottom:.25em;
+    max-width:15em;
+    cursor: pointer;
+
+}
+.radio-3d{
+	background-color:#c9d974;
+}
+.radio-video{
+	background-color:#d572b1;
+}
+.radio-web{
+	background-color:#f0bc7f;
+}
+.radio-photography{
+	background-color:#a4a1d4;
+}
+
+.radio-typography{
+	background-color:#e88282;
+}
+.radio-design{
+	background-color:#7fd0c7;
+}
+
+
+
 
 /* Z-index of #mask must lower than #boxes .window */
 #mask {
@@ -653,10 +716,24 @@ input[type="radio"]{
 	border:3px solid #dae6e6;
 	margin: 1em 0;
 	font-weight: 600;
+	-webkit-border-radius: 10px;
+border-radius: 10px;
 }
 .alert i{
 	font-size: 1.4em;
 	opacity: .4;
+	float: left;
+}
+.alert p{
+	margin:0 0 0 2em ;
+}
+.alert.error i{
+	color:#ff8b72;
+	opacity: 1;
+}
+.alert.success i{
+	color:#b5cb54;
+	opacity: 1;
 }
 .alert.success{
 	background-color: #f3f9df;
@@ -768,8 +845,22 @@ input[type="radio"]{
 		float:left;
 	}
 }
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 25em) { /* 400 and up */
+	.multicolumn-two{
+		-moz-column-count: 2;
+		-moz-column-gap: 16px;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 16px;
+		column-count: 2;
+		column-gap: 16px;
+	}
+	.primary.solid{
+	
+	display: inline-block;
+	width: auto;
+	}
 }
+
 @media only screen and (min-width: 40em) {  /* 620 and up */
 
 	/* medium-sized screen. bring the menu back and switch to two column */
@@ -821,6 +912,13 @@ input[type="radio"]{
 	main {
 		width:75%;
 		float:right;
+	}
+	.page-submit main{
+		width: 100%;
+		float:none;
+		max-width: 36em;
+		margin:0 auto;
+
 	}
 	.tiles-list .tile {
 		width:31.3%;

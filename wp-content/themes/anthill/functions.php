@@ -388,21 +388,20 @@ function anthill_process_new_resource() {
 	
 	$url = parse_url( $resource_link );
 	if ( empty($resource_link) || !$url )
-		$errors[] = 'Please provide a valid URL';
+		$errors[] = 'Please provide a valid URL.';
 
 	if ( $url['scheme'] != 'http' && $url['scheme'] != 'https' )
 		$resource_link = 'http://' . $resource_link;
 	
 	if( !anthill_check_url( $resource_link ) )
-		$errors[] = 'Please provide a URL currently available online';
+		$errors[] = 'Please provide a URL currently available online.';
 	
 	if( !$resource_filter )
-		$errors[] = 'Please select a filter for your resource';
+		$errors[] = 'Please select a filter for your resource.';
 	
 	# Check for general errors
 	if( $errors )
-		return $errors;
-	
+		return $errors;	
 	
 	# Create keywords taxonomy array
 	$keywords = array();
@@ -493,3 +492,15 @@ function anthill_submit_resource_button($style = button){
 	</div>
 	<?php
 }
+/**
+ * body class with slug
+ */
+
+function anthill_slug_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'anthill_slug_body_class' );
