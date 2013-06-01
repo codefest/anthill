@@ -1,5 +1,6 @@
 .htaccess
 wp-config.php
+wp-content/plugins/theme_helper-master/
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
@@ -9,4 +10,4 @@ sitemap.xml
 *.log
 wp-content/cache/
 wp-content/backups/
-sitemap.xml.gz`
+sitemap.xml.gz
