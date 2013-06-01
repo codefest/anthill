@@ -1,6 +1,6 @@
 <?php
 /**
- * Submit Resource Form
+ * Submit Resource Form.  Applies to a wordpress page with a slug of 'submit'
  *
  * @package WordPress
  * @subpackage Anthill
@@ -10,6 +10,9 @@
 $resource_errors = anthill_process_new_resource();
 ?>
 <?php get_header(); ?>
+<?php get_sidebar(); ?>
+	
+	<main>
 
 		<?php if ( have_posts() ) : ?>
 			
@@ -89,9 +92,5 @@ $resource_errors = anthill_process_new_resource();
 			<?php endif; ?>		
 
 	</main>
-
-	<?php get_sidebar(); ?>
-
- 
 
 <?php get_footer(); ?>

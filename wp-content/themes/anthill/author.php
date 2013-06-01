@@ -8,7 +8,9 @@
  */
 ?>
 <?php get_header(); ?>
-
+<?php get_sidebar(); ?>
+	
+	<main>
 		<?php 
 		$author = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 		
@@ -32,10 +34,6 @@
 
 			<?php endif; ?>		
 		</div> <!-- Closes Users Profile-->
-	</main> <!-- Close main sectioning element -->
-
-	<?php get_sidebar(); ?>
-
- 
+	</main>  
 
 <?php get_footer(); ?>

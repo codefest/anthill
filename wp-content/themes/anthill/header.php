@@ -73,10 +73,5 @@
 </header>
 
 <div class="wrapper">
-	<main>
-		<!-- @TODO  this markup needs some work -->
-		<div class="submit-resource">
-			<a href="<?php echo home_url('/submit/'); ?>" class="primary button">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
-		</div>
+	
+		<?php //removed submit button for now...  ?>

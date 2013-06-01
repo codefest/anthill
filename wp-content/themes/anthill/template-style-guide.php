@@ -3,6 +3,8 @@
 ?>
 
 <?php get_header(); ?>
+<?php get_sidebar(); ?>
+	<main>
 
 
 		<h1>Use H1 for page titles</h1>
@@ -350,10 +352,6 @@
 			</div>
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <span><strong>This is a span inside of a paragraph, using the <code>&lt;span&gt;</code> tag.</strong></span> Sed odio nibh, tincidunt adipiscing, pretium nec, tincidunt id, enim. Fusce scelerisque nunc vitae nisl.</p>
 
-		</main>
-
-		<?php get_sidebar(); ?>
-
-	 
+		</main>	 
 
 <?php get_footer(); ?>

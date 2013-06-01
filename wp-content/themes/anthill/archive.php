@@ -8,7 +8,9 @@
  */
 ?>
 <?php get_header(); ?> 
-
+<?php get_sidebar(); ?>
+	
+	<main>
 
 		<h1><?php single_term_title(); ?> Resources</h1>
 		<div class="tiles-list cf masonry">
@@ -31,7 +33,7 @@
 		
 	</main> <!-- Close main sectioning element -->
 
-	<?php get_sidebar(); ?>
+	
 
  
 

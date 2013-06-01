@@ -8,8 +8,8 @@
  */
 ?>
 <?php get_header(); ?>
-
-		
+<?php get_sidebar(); ?>
+	<main>		
 		<div class="tiles-list cf masonry">
 		<?php 
 		/** Customize the loop to show Resource post types
@@ -35,9 +35,5 @@
 			<?php endif; ?>		
 		</div>
 	</main>
-
-	<?php get_sidebar(); ?>
-
- 
 
 <?php get_footer(); ?>

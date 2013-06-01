@@ -8,9 +8,11 @@
  */
 ?>
 <?php get_header(); ?>
+<?php get_sidebar(); ?>
+	
+	<main>
 
-		<?php if ( have_posts() ) : ?>
-			
+		<?php if ( have_posts() ) : ?>			
 				
 				<?php while ( have_posts() ) : the_post(); ?>
 				<article>
@@ -31,8 +33,7 @@
 
 				<article id="post-0" class="post no-results not-found hentry">
 					
-					<h1 class="entry-title">Nothing Found</h1>
-					
+					<h1 class="entry-title">Nothing Found</h1>					
 
 					<div class="entry-content">
 						<p>no results were found for the requested archive. Perhaps searching will help find a related post.</p>
@@ -40,12 +41,8 @@
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 
-			<?php endif; ?>		
+			<?php endif; ?>	
 
 	</main>
-
-	<?php get_sidebar(); ?>
-
- 
 
 <?php get_footer(); ?>

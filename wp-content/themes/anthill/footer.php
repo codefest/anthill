@@ -10,6 +10,7 @@
  * @since Anthill 0.1
  */
 ?>
+</div><!-- .wrapper -->
 <footer class="wrapper">footer stuff goes here</footer>
 <?php wp_footer(); ?>
 </body>

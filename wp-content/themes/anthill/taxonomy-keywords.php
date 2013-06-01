@@ -8,6 +8,8 @@
  */
 ?>
 <?php get_header(); ?>
+<?php get_sidebar(); ?>
+	<main>
 
 
 		<h1><?php single_term_title(); ?> Resources</h1>
@@ -30,9 +32,5 @@
 		</div> <!-- Close tiles list div -->
 		
 	</main>
-
-	<?php get_sidebar(); ?>
-
- 
 
 <?php get_footer(); ?>

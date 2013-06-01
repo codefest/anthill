@@ -8,7 +8,8 @@
  */
 ?>
 <?php get_header(); ?>
-
+<?php get_sidebar(); ?>
+	<main>
 
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -32,9 +33,5 @@
 		<?php endif; ?>		
 		
 	</main>
-
-<?php get_sidebar(); ?>
-
-</div> <!-- .wrapper -->
 
 <?php get_footer(); ?>

@@ -8,6 +8,8 @@
  */
 ?>
 <?php get_header(); ?>
+<?php get_sidebar(); ?>
+	<main>
 
 		<h1>Results for <?php the_search_query(); ?></h1>
 		<div class="search cf">
@@ -28,9 +30,5 @@
 
 		</div>	
 	</main>
-
-	<?php get_sidebar(); ?>
-
- 
 
 <?php get_footer(); ?>
