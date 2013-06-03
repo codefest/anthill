@@ -371,6 +371,7 @@ function anthill_loginout(){
 
 function anthill_process_new_resource() {
 	global $_POST;
+	global $_FILES;
 	# Return as false if there is no POST information OR if there is no resource title (meaning it's likely not even a POST for a resource submission)
 	if ( empty( $_POST ) || !isset( $_POST['resource_title'] ) )
 		return false;
@@ -438,9 +439,41 @@ function anthill_process_new_resource() {
 	# Save the resource link
 	add_post_meta( $r_id, 'resource_url', $resource_link );
 	
+	# Upload files, if any
+	if( !empty( $_FILES ) )
+		$file = anthill_resource_media_upload( 'resource_image', $r_id );
+
+	# Set the new file as the featured image
+	if( isset( $file ) && is_numeric( $file ) )
+		add_post_meta( $r_id, '_thumbnail_id', $file );
+	
 	# Redirect to view the new resource link
 	$link = get_permalink( $r_id );
     wp_redirect( $link );
+}
+
+/** 
+ * Function to handle a front-end image upload to resources
+ *
+ */
+
+function anthill_resource_media_upload( $file_resource, $resource_id ) {
+	global $_FILES;
+	
+	# Return false if there's nothing in the $_FILE
+	if( empty( $_FILES[$file_resource] ) )
+		return false;
+	
+	# Do the upload
+	require_once(ABSPATH . 'wp-admin/includes/admin.php');
+	$media_id = media_handle_upload( $file_resource, $resource_id );
+	
+	# Check whether there was an error
+	if( is_wp_error( $media_id ) )
+		return $media_id->errors['upload_error'];
+	
+	# Return the media ID
+	return $media_id;
 }
 
 /**
