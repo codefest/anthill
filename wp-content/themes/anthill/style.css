@@ -32,7 +32,6 @@ Table of Contents
 ======================================================================
 
   @TODO 
-  responsive breakpoints
   test/bugfix for older browsers (first draft is only tested in current ver chrome, FF and IE on windows)
 
   */
@@ -72,9 +71,7 @@ Table of Contents
 ==Basic resets
 */ 
 * {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+	-moz-box-sizing: border-box;-webkit-box-sizing: border-box;	box-sizing: border-box;
 }
 html { 
 	font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -150,7 +147,7 @@ footer {
 	font-size: 1.2em;
 }
 .submit-resource.tile{
-	border:dashed 3px #e6e6e6 ;
+	border:dashed .1875em #e6e6e6 ;
 	background-color: #eee;
 	margin:0 0 1em;
 	padding:.7em;
@@ -343,20 +340,22 @@ nav ul li {
 	border:solid 1px #e1e3e3;
 	position: relative;
 	width:100%;
-	overflow:hidden;
-
-	
+	height:auto;	
 }
 .resource-image {
+
 	position: relative;
 }
 .tiles-list .resource-image {
 	display: block;
 	overflow: hidden;
-	maxheight: 50%;
+	/* max-height: 12em ;192/16 */
+	text-align: center;
+	background-color:#666;
 }
 .tiles-list .resource-image img {
 	width: 100%;
+	height: auto;
 }
 .popularity {
 	background-color: #323939;
@@ -399,8 +398,9 @@ nav ul li {
 
 .tile .category-icon {
 	position: absolute;
-	bottom:-1em;
-	left:1em;
+	top:-.25em;
+	right:1em;
+	z-index: 2000;
 }
 .tile .category-icon:hover{
 	background-color: #323939;
@@ -429,7 +429,7 @@ nav ul li {
 }
 .search .tile {
 	margin-right: 2%;
-	margin: 0 0 20px 0;
+	margin: 0 0 1.25em 0;
 }
 .search .tile .resource-image {
 	float:right;
@@ -449,8 +449,8 @@ nav ul li {
 }
 .keywords a {
 	background: #B2E0F0;
-	padding: 2px 3px;
-	margin-right: 3px;
+	padding: .125em .1875em;
+	margin-right: .1875em;
 	color: #232929;
 	font-weight: normal;
 	font-size: .9em;
@@ -497,14 +497,14 @@ nav ul li {
 	border-color: #da5e16;
 }
 .category-icon.web i {
-	top: -2px;
+	top: -.125em;
 }
 .category-icon.design {
 	background-color: #26a4af;
 	border-color: #167f8e;
 }
 .category-icon.design i {
-	top: -2px;
+	top: -.125em;
 }
 .category-icon.photography {
 	background-color: #6460b6;
@@ -519,7 +519,7 @@ nav ul li {
 	border-color: #990948;
 }
 .category-icon.video i {
-	top: -2px;
+	top: -.125em;
 }
 /*
 ==Buttons and forms
@@ -713,7 +713,7 @@ input[type="radio"]{
 .alert {
 	padding:.75em;
 	background-color:#edf5f5;
-	border:3px solid #dae6e6;
+	border:.1875em solid #dae6e6;
 	margin: 1em 0;
 	font-weight: 600;
 	-webkit-border-radius: 10px;
@@ -838,7 +838,7 @@ border-radius: 10px;
 /*
 ==Media Queries
 */
-@media only screen and (min-width: 21em) { /* 320 and up */
+@media only screen and (min-width: 40em) { /* 620 and up */
 	.tiles-list .tile {
 		width:47%;
 		margin:0 1% 2% 1%;
@@ -861,7 +861,7 @@ border-radius: 10px;
 	}
 }
 
-@media only screen and (min-width: 40em) {  /* 620 and up */
+@media only screen and (min-width: 55em) {  /* 880 and up */
 
 	/* medium-sized screen. bring the menu back and switch to two column */
 

@@ -5,7 +5,7 @@ jQuery( document ).ready( function( $ ) {
 	 * responsive additions via http://osvaldas.info/responsive-jquery-masonry-or-pinterest-style-layout
 	 */
 	 var columns = 3,
-	 setColumns = function() { columns = $( window ).width() > 640 ? 3 : $( window ).width() > 320 ? 2 : 1; };
+	 setColumns = function() { columns = $( window ).width() > 880 ? 3 : $( window ).width() > 640 ? 2 : 1; };
 
 	 setColumns();
 	 $( window ).resize( setColumns );
