@@ -341,6 +341,7 @@ nav ul li {
 	width:100%;
 	height:auto;
 	margin-bottom:1em;	
+	word-wrap: break-word;
 }
 .resource-image {
 	position: relative;
@@ -403,9 +404,35 @@ nav ul li {
 	width:  31.3333333333333%;
 	margin:0 0 0 2%;
 }
-.tile.no-image{
-	
-	border-top:solid 1.5em #e1e3e3;
+/* colored bars for tiles with no image */
+.tile.no-image{	
+	padding-top:2em;
+	-webkit-box-shadow: inset 0px 2em 0px 0px #e1e3e3;        
+    box-shadow: inset 0px 2em 0px 0px #e1e3e3;
+}
+.tile.no-image.typography{
+	-webkit-box-shadow: inset 0px 2em 0px 0px #e88282;
+    box-shadow: inset 0px 2em 0px 0px #e88282;
+}
+.tile.no-image.photography{
+	-webkit-box-shadow: inset 0px 2em 0px 0px #a4a1d4;
+    box-shadow: inset 0px 2em 0px 0px #a4a1d4;
+}
+.tile.no-image.three-d {
+	-webkit-box-shadow: inset 0px 2em 0px 0px #c9d974;
+    box-shadow: inset 0px 2em 0px 0px #c9d974;
+}
+.tile.no-image.design{
+	-webkit-box-shadow: inset 0px 2em 0px 0px #7fd0c7;
+    box-shadow: inset 0px 2em 0px 0px #7fd0c7;
+}
+.tile.no-image.video{
+	-webkit-box-shadow: inset 0px 2em 0px 0px #d572b1;
+    box-shadow: inset 0px 2em 0px 0px #d572b1;
+}
+.tile.no-image.web{
+	-webkit-box-shadow: inset 0px 2em 0px 0px #f0bc7f;
+    box-shadow: inset 0px 2em 0px 0px #f0bc7f;
 }
 /*
 ==Category Icons
@@ -491,6 +518,24 @@ nav ul li {
 	display: inline;
 	position: relative;
 }
+/* fine-tuning */
+
+.category-icon.design i {
+	top: -.05em;
+}
+.category-icon.photography i {
+	top: .05em;
+}
+.category-icon.typography i {
+	top: -.05em;
+}
+.category-icon.video i {
+	top: -.05em;
+}
+.category-icon.web i {
+	top: -.055em;
+}
+
 .category-icon.three-d {
 	background-color: #a4be13;
 	border-color: #7fa30b;
@@ -503,15 +548,9 @@ nav ul li {
 	background-color: #e58d25;
 	border-color: #da5e16;
 }
-.category-icon.web i {
-	top: -.125em;
-}
 .category-icon.design {
 	background-color: #26a4af;
 	border-color: #167f8e;
-}
-.category-icon.design i {
-	top: -.125em;
 }
 .category-icon.photography {
 	background-color: #6460b6;
@@ -519,15 +558,12 @@ nav ul li {
 }
 .category-icon.photography i {
 	font-size: 1.8em;
-	top: 1px;
 }
 .category-icon.video {
 	background-color: #b7107a;
 	border-color: #990948;
 }
-.category-icon.video i {
-	top: -.125em;
-}
+
 /*
 ==Buttons and forms
 */
@@ -836,9 +872,10 @@ input[type="radio"]{
 	.category-nav .category-icon{
 		font-size:1.3em;
 	}
-	
 
 }
+/* these width values (880px = 55em, 620px = 40em) have to match up with main.js masonry implementation. 
+If you change them here, change them there as well!  */
 @media only screen and (min-width: 40em) { 		/* 620 and up */
 	.tiles-list .tile {
 		width:47%;
@@ -853,6 +890,8 @@ input[type="radio"]{
 		font-size:1.6em;
 	}
 }
+/* these width values (880px = 55em, 620px = 40em) have to match up with main.js masonry implementation. 
+If you change them here, change them there as well!  */
 @media only screen and (min-width: 55em) {  	/* 880 and up */
 
 	/* medium-sized screen. bring the menu back and switch to two column */
@@ -904,6 +943,19 @@ input[type="radio"]{
 	}
 	.category-nav .category-icon{
 		font-size:1em;
+		display:inline-block;
+	}
+	.category-nav li{
+		margin-bottom:0em;
+	}
+	.category-nav a{
+		padding:.4em 1em .4em .4em;
+		display:inline-block;
+	}
+	.category-nav .filter-name{
+		position:relative;
+		top:-.35em;
+		margin-left:.4em;
 	}
 	main {
 		width:75%;
@@ -917,7 +969,7 @@ input[type="radio"]{
 
 	}
 	.tiles-list .tile {
-		width:31.3%;
+		width:30.3%;
 		margin:0 .5% 2% .5%;
 		float:left;
 	}

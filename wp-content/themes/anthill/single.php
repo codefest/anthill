@@ -47,17 +47,9 @@
 					</div>
 				</div>
 
-				<!-- Comments -->
-				<div class="">
+				<?php wp_list_comments(); ?>
 
-					<!-- Area icon and header -->
-					<h3><i class="icon-magic"></i> Comments</h3>
 
-					<!-- Comment Button -->
-					<a class="primary button" href="#">
-						<span class="button-text">Comment</span>
-					</a>
-				</div>
 
 				<div>
 					<!-- Gravatar -->

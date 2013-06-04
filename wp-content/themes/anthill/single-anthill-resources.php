@@ -15,7 +15,7 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 
 		<?php get_template_part( 'loop', 'full' ); ?>
-
+		<?php wp_list_comments( ); ?>
 			<?php endwhile; ?>
 
 		<?php else : ?>
@@ -29,6 +29,8 @@
 				<?php get_search_form(); ?>
 			</div><!-- .entry-content -->
 		</article><!-- #post-0 -->
+
+		
 		
 		<?php endif; ?>		
 		

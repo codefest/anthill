@@ -38,6 +38,8 @@ function anthill_setup() {
 		'primary'=> 'Primary Menu',
 		'footer' =>'Footer Menu' 
 		));	
+
+	 if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 }
 
 /**
@@ -315,7 +317,11 @@ function anthill_category_id_class($classes) {
 	
 	//for convenience, add the categories to the class	
     foreach(get_the_terms($post->ID, 'filters') as $category)
-        $classes[] = $category->slug;
+        if($category->slug == '3d'){
+ 			$classes[] = 'three-d'; //cant start a class with a number!
+        }else{
+       		$classes[] = $category->slug;
+    	}	
     //all done!
     return $classes;
 }
@@ -534,4 +540,15 @@ function anthill_slug_body_class( $classes ) {
 	}
 	return $classes;
 }
+/**
+ * Hide admin bar for non-admins
+ */
 add_filter( 'body_class', 'anthill_slug_body_class' );
+// show admin bar only for admins
+if (!current_user_can('manage_options')) {
+	add_filter('show_admin_bar', '__return_false');
+}
+// show admin bar only for admins and editors
+if (!current_user_can('edit_posts')) {
+	add_filter('show_admin_bar', '__return_false');
+}

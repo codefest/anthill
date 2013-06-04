@@ -5,10 +5,13 @@ jQuery( document ).ready( function( $ ) {
 	 * responsive additions via http://osvaldas.info/responsive-jquery-masonry-or-pinterest-style-layout
 	 */
 	 var columns = 3,
-	 setColumns = function() { columns = $( window ).width() > 880 ? 3 : $( window ).width() > 640 ? 2 : 1; };
+	 /* these width values (860px, 620px) have to match up with media query breakpoints in style.css  */
+	 setColumns = function() { columns = $( window ).width() > 860 ? 3 : $( window ).width() > 620 ? 2 : 1; };
 
 	 setColumns();
+	 
 	 $( window ).resize( setColumns );
+	 //$( window ).resize( alert(columns) );
 
 	 $( '.tiles-list' ).masonry( { 
 	 	itemSelector: '.tile',
@@ -28,7 +31,7 @@ jQuery( document ).ready( function( $ ) {
 	 	if( top >= 130 && $( window ).width() > 880) {
 	 		categories.css({
 	 			position: 'fixed',
-	 			top: '20px'
+	 			top: '0px'
 	 		});
 	 	} else {
 	 		categories.css({
