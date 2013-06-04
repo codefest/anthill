@@ -12,6 +12,9 @@
 	<?php resource_image(); ?>
 	<h3 class="entry-title">
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+		
+		<?php show_loop_icon(); ?>
 	</h3>
 	<div class="postmeta"> 
 		<span class="username"><?php the_author_posts_link(); ?></span> |

@@ -346,6 +346,9 @@ nav ul li {
 
 	position: relative;
 }
+.tiles-list{
+	margin-top:1em;
+}
 .tiles-list .resource-image {
 	display: block;
 	overflow: hidden;
@@ -395,11 +398,13 @@ nav ul li {
 	font-style: normal;
 }
 
-
+.tile .entry-title{
+	position:relative;
+}
 .tile .category-icon {
 	position: absolute;
-	top:-.25em;
-	right:1em;
+	top:-2.6em;
+	left:0;
 	z-index: 2000;
 }
 .tile .category-icon:hover{
@@ -436,11 +441,13 @@ nav ul li {
 	width:  31.3333333333333%;
 	margin:0 0 0 2%;
 }
-.search .resource-image .category-icon {
+/*
+.search .category-icon {
 	position: absolute;
 	bottom:1em;
 	left:-1em;
 }
+*/
 /* @TODO:  make this positioning fluid... fix the markup of the icon so the a tag is inside the div */
 .search .tile.no-image .category-icon{
 	position: absolute;

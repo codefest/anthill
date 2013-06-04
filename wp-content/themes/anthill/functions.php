@@ -268,7 +268,7 @@ function resource_image() {
 		$size = 'anthill-full';
 	
 	if ( has_post_thumbnail() ) { ?>
-	<?php show_loop_icon(); ?>
+	
 	<div class="resource-image thumbnail">
 		<a href="<?php the_permalink(); ?>">
 			 <?php the_post_thumbnail( $size ); ?> 
