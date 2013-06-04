@@ -18,7 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /__/     \__\ |__| \__|     |__|     |__|  |__| |__| |_______||_______|
 
 
-======================================================================
+______________________________________________________________________
 
 Table of Contents
 
@@ -29,26 +29,26 @@ Table of Contents
  ==Navigation
   @TODO  finish the table of contents here
 
-======================================================================
+_______________________________________________________________________
 
-  @TODO 
-  test/bugfix for older browsers (first draft is only tested in current ver chrome, FF and IE on windows)
+@TODO 
+test/bugfix for older browsers (first draft is only tested in current ver chrome, FF and IE on windows)
 
-  */
+*/
 
-  @import url(http://fonts.googleapis.com/css?family=Raleway:400,200,600,700);
-  @import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,200,600,700);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
 
-  @font-face {
-  	font-family: 'topik';
-  	src:url('font/topik.eot');
-  	src:url('font/topik.eot?#iefix') format('embedded-opentype'),
-  	url('font/topik.woff') format('woff'),
-  	url('font/topik.ttf') format('truetype'),
-  	url('font/topik.svg#topik') format('svg');
-  	font-weight: normal;
-  	font-style: normal;
-  }
+@font-face {
+	font-family: 'topik';
+	src:url('font/topik.eot');
+	src:url('font/topik.eot?#iefix') format('embedded-opentype'),
+	url('font/topik.woff') format('woff'),
+	url('font/topik.ttf') format('truetype'),
+	url('font/topik.svg#topik') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 /*
 ==HTML5 Boilerplate styles and Clearfix 
 */
@@ -60,13 +60,12 @@ Table of Contents
 .cf:after {
 	clear: both;
 }
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
- .cf {
+/* For IE 6/7 only
+Include this rule to trigger hasLayout and contain floats.
+*/
+.cf {
  	*zoom: 1;
- }
+}
 /* 
 ==Basic resets
 */ 
@@ -74,54 +73,55 @@ Table of Contents
 	-moz-box-sizing: border-box;-webkit-box-sizing: border-box;	box-sizing: border-box;
 }
 html { 
-	font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-	body {
-		font-size: 1em;
-		line-height: 1.5;
-		font-family:  Raleway, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-		;
-	}
+	font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; 
+}
+body {
+	font-size: 1em;
+	line-height: 1.5;
+	font-family:  Raleway, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	;
+}
 
-	::-moz-selection {
-		background: #b3d4fc;
-		text-shadow: none;
-	}
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
 
-	::selection {
-		background: #b3d4fc;
-		text-shadow: none;
-	}
-	hr {
-		display: block;
-		height: 1px;
-		border: 0;
-		border-top: 1px solid #ccc;
-		margin: 1em 0;
-		padding: 0;
-	}
-	fieldset {
-		border: 0;
-		margin: 0;
-		padding: 0;
-	}
-	textarea {
-		resize: vertical;
-	}
-	.chromeframe {
-		margin: 0.2em 0;
-		background: #ccc;
-		color: #000;
-		padding: 0.2em 0;
-	}
-	img{ -ms-interpolation-mode: bicubic; }
-	img,
-	embed,
-	object,
-	video {
-		max-width: 100%; /* @TODO  only works with ie7+ */
-		vertical-align: middle;
-		height: auto; /* Keeps images proportional at smaller sizes */
-	}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+textarea {
+	resize: vertical;
+}
+.chromeframe {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+img{ -ms-interpolation-mode: bicubic; }
+img,
+embed,
+object,
+video {
+	max-width: 100%; /* @TODO  only works with ie7+ */
+	vertical-align: middle;
+	height: auto; /* Keeps images proportional at smaller sizes */
+}
 /*
 ==Basic Layout
 */
@@ -136,7 +136,7 @@ header {
 
 .wrapper {
 	width:98%;
-	max-width:1000px;
+	max-width:68.75em; /* 1100 */
 	margin: 0 auto;
 	position: relative;
 }
@@ -156,7 +156,7 @@ footer {
 
 .submit-resource + div {
 	clear: both;
-	padding-top: 20px;
+	padding-top: 1.25em;
 }
 
 /*
@@ -250,7 +250,7 @@ header {
 header .logo{
 	text-align: center;
 	position:relative;
-	top:-10px;
+	top:-.625em;
 	z-index: 1500;
 }
 header .logo a:hover {
@@ -268,7 +268,6 @@ header #searchform input[type=text] {
 	display: inline-block;
 	width: 88%;
 }
-
 
 /*
 ==Navigation
@@ -297,7 +296,7 @@ nav ul li {
 .utilities:after {
 	content: ' ';
 	display: block;
-	height: 5px;
+	height: .3125em;
 	width: 100%;
 	background: url('images/color_strip.png');
 }
@@ -333,17 +332,17 @@ nav ul li {
 	display:none; 
 }
 /*
-==Visual Tile
+==Tile - visual
 */
 .tile {
 	background-color:#FAFAFA;
 	border:solid 1px #e1e3e3;
 	position: relative;
 	width:100%;
-	height:auto;	
+	height:auto;
+	margin-bottom:1em;	
 }
 .resource-image {
-
 	position: relative;
 }
 .tiles-list{
@@ -378,6 +377,36 @@ nav ul li {
 	color:#F00;
 	background-color: transparent;
 }
+.tile .entry-title {
+	margin:1em 1em .75em;
+}
+.tile .entry-title .category-icon{
+	font-size:.8888888888em !important;
+}
+.entry-title a:hover{
+	color: #323939;
+}
+.tile .entry-content {
+	margin:1em;
+}
+.tile .postmeta {
+	margin:1.230769em; /* 16/13 */
+	font-size:.8125em; /* 13/16 */
+}
+
+.search .tile {
+	margin-right: 2%;
+	margin: 0 0 1.25em 0;
+}
+.search .tile .resource-image {
+	float:right;
+	width:  31.3333333333333%;
+	margin:0 0 0 2%;
+}
+.tile.no-image{
+	
+	border-top:solid 1.5em #e1e3e3;
+}
 /*
 ==Category Icons
 */
@@ -406,6 +435,7 @@ nav ul li {
 	top:-2.6em;
 	left:0;
 	z-index: 2000;
+	;
 }
 .tile .category-icon:hover{
 	background-color: #323939;
@@ -416,38 +446,8 @@ nav ul li {
 .tile .category-icon a:hover{
 	background-color: transparent;
 }
-.tile .entry-title {
-	margin:1em;
-}
-.entry-title a:hover{
-	color: #323939;
-}
-.tile .entry-content {
-	margin:1em;
-}
-.tile .postmeta {
-	margin:1em;
-}
-.tile.no-image .category-icon{
-	position: static;
-	float: left;
-}
-.search .tile {
-	margin-right: 2%;
-	margin: 0 0 1.25em 0;
-}
-.search .tile .resource-image {
-	float:right;
-	width:  31.3333333333333%;
-	margin:0 0 0 2%;
-}
-/*
-.search .category-icon {
-	position: absolute;
-	bottom:1em;
-	left:-1em;
-}
-*/
+
+
 /* @TODO:  make this positioning fluid... fix the markup of the icon so the a tag is inside the div */
 .search .tile.no-image .category-icon{
 	position: absolute;
@@ -469,20 +469,20 @@ nav ul li {
 	-webkit-border-radius: 5em;
 	border-radius: 5em;
 }
-.category-icon {
+.category-icon { 				/* base font 16px on the icons! */
 	background-color: #29A1D3;
 	display: inline-block;
 	color: #FFF;
 	padding: 0;
 	-webkit-border-radius: 5em;
 	border-radius: 5em;
-	border: 4px solid #29A1D3;
-	width: 40px;
-	height: 40px;
-	line-height: 27px;
+	border: .25em solid #29A1D3;
+	width: 2.5em ;/* 20/16*/
+	height: 2.5em;
+	line-height: 1.6875em; /* 27/16 */
 	text-align: center;
 	position: relative;
-	text-shadow: -1px -1px 0px #777;
+	text-shadow: 0px -1px 0px rgba(0,0,0,.5);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -575,7 +575,7 @@ button#searchsubmit i{
 }
 .primary.solid{
 	background-color: #26a4af !important;
-	border-bottom: solid 4px #11636f;
+	border-bottom: solid .25em #11636f;
 	padding: .25em 1em !important;
 	text-shadow: 0 -1px 0 #117182;
 	font-weight: bold;
@@ -588,14 +588,14 @@ button#searchsubmit i{
 	display: inline-block;
 	min-height:2.1em;
 	line-height: 1.1em;
-	border-bottom:solid 4px #187ac1;
+	border-bottom:solid .25em #187ac1;
 	vertical-align: top;
 }
 .primary .button-text,
 input.primary,
 button.primary {
 	background-color: #333a3a;
-	border-bottom: solid 4px #030303;
+	border-bottom: solid .25em #030303;
 	padding:.5em .6em 0 .6em;
 	min-height: 2.1em;
 	vertical-align: top;
@@ -604,7 +604,7 @@ button.primary {
 }
 .primary:hover i,
 .primary:hover span {
-	border-top: solid 4px #f5f7f7;
+	border-top: solid .25em #f5f7f7;
 	border-bottom: none;
 }
 input[type=text],
@@ -631,8 +631,8 @@ textarea{
 	background-color:#f7fafa;
 	border:solid 1px #c5c9c9;
 	border-bottom:solid 1px #FFF;
-	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1); 
+	-webkit-box-shadow: inset 0px 0px .625em 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px .625em 0px rgba(0, 0, 0, .1); 
 }
 textarea.resource-description{
 	min-height:10em;
@@ -642,7 +642,7 @@ input:focus,
 textarea:hover,
 textarea:focus{
 	background-color: #f2ffff;
-	box-shadow: inset 0px 0px 10px 0px #dce7e8; 
+	box-shadow: inset 0px 0px .625em 0px #dce7e8; 
 	border-color:#b5c9c9;
 	outline:none;
 
@@ -666,11 +666,11 @@ input[type="radio"]{
 .bubble{
 	background-color:#29A1D3;
 	padding:.25em .25em .25em 1em;
-	-webkit-border-radius: 50px;    
-    border-radius: 50px;
-    margin-bottom:.25em;
-    max-width:15em;
-    cursor: pointer;
+	-webkit-border-radius: 5em;    
+	border-radius: 5em;
+	margin-bottom:.25em;
+	max-width:15em;
+	cursor: pointer;
 
 }
 .radio-3d{
@@ -685,7 +685,6 @@ input[type="radio"]{
 .radio-photography{
 	background-color:#a4a1d4;
 }
-
 .radio-typography{
 	background-color:#e88282;
 }
@@ -693,27 +692,6 @@ input[type="radio"]{
 	background-color:#7fd0c7;
 }
 
-
-
-
-/* Z-index of #mask must lower than #boxes .window */
-#mask {
-	position:absolute;
-	z-index:9000;
-	background-color:#000;
-	display:none;
-	top:0;
-	left:0;
-}
-
-.window {
-	position:fixed;
-	width:440px;
-	display:none;
-	z-index:9999;
-	padding:20px;
-	background-color:#EEE;
-}
 /*
 == alerts
 */
@@ -723,8 +701,8 @@ input[type="radio"]{
 	border:.1875em solid #dae6e6;
 	margin: 1em 0;
 	font-weight: 600;
-	-webkit-border-radius: 10px;
-border-radius: 10px;
+	-webkit-border-radius: .625em;
+	border-radius: .625em;
 }
 .alert i{
 	font-size: 1.4em;
@@ -795,7 +773,7 @@ border-radius: 10px;
 	background-color: transparent;
 	border: 0;
 	overflow: hidden;
-	*text-indent: -9999px;
+	*text-indent: -9999em;
 }
 .ir:before {
 	content: "";
@@ -845,39 +823,46 @@ border-radius: 10px;
 /*
 ==Media Queries
 */
-@media only screen and (min-width: 40em) { /* 620 and up */
+
+@media only screen and (min-width: 25em) { 		/* 400 and up */
+	.multicolumn-two{
+		-moz-column-count: 2;
+		-moz-column-gap: 1em;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 1em;
+		column-count: 2;
+		column-gap: 1em;
+	}
+	.category-nav .category-icon{
+		font-size:1.3em;
+	}
+	
+
+}
+@media only screen and (min-width: 40em) { 		/* 620 and up */
 	.tiles-list .tile {
 		width:47%;
 		margin:0 1% 2% 1%;
 		float:left;
 	}
-}
-@media only screen and (min-width: 25em) { /* 400 and up */
-	.multicolumn-two{
-		-moz-column-count: 2;
-		-moz-column-gap: 16px;
-		-webkit-column-count: 2;
-		-webkit-column-gap: 16px;
-		column-count: 2;
-		column-gap: 16px;
-	}
 	.primary.solid{
-	
-	display: inline-block;
-	width: auto;
+		display: inline-block;
+		width: auto;
+	}
+	.category-nav .category-icon{
+		font-size:1.6em;
 	}
 }
-
-@media only screen and (min-width: 55em) {  /* 880 and up */
+@media only screen and (min-width: 55em) {  	/* 880 and up */
 
 	/* medium-sized screen. bring the menu back and switch to two column */
 
 	header .logo {
 		text-align: left;
 		position: relative;
-		top: 20px;
-		left: -20px;
-		padding-left: 20px;
+		top: 1.25em;
+		left: -1.25em;
+		padding-left: 1.25em;
 		background: url('images/categories_bg.png') no-repeat;
 		height: 7em;
 		width:46%;
@@ -886,8 +871,8 @@ border-radius: 10px;
 
 	header .the_logo {
 		position: relative;
-		top: -30px;
-		left: -18px;
+		top: -1.875em;
+		left: -1.125em;
 		z-index: 1000;
 	}
 	#menu-link{
@@ -897,11 +882,12 @@ border-radius: 10px;
 		float:right;
 		width:53%;
 		position:relative;
-		top:40px;
+		top:2.5em;
+		text-align: right;
 	}
 	header #searchform input[type=text] {
 		display: inline-block;
-		width: 350px;
+		width: 22em;
 	}
 	main .submit-resource{
 		display: block;
@@ -915,6 +901,9 @@ border-radius: 10px;
 		width:22.75%;
 		margin:1.5% 1.5% 1.5% .75%;
 		float:left;
+	}
+	.category-nav .category-icon{
+		font-size:1em;
 	}
 	main {
 		width:75%;
@@ -933,7 +922,7 @@ border-radius: 10px;
 		float:left;
 	}
 	.category-nav{
-		background: url('images/categories_bg.png') -20px -140px no-repeat;
+		background: url('images/categories_bg.png') -1.25em -140px no-repeat;
 
 	}
 	.category-nav li{
@@ -945,10 +934,9 @@ border-radius: 10px;
 		display:inline;
 	}
 }
-@media print,  (-o-min-device-pixel-ratio: 5/4),  (-webkit-min-device-pixel-ratio: 1.25),  (min-resolution: 120dpi) {
-}
-
-
+/* 
+==HD screens
+*/
 
 
 /* 
