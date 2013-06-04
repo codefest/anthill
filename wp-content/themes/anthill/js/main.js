@@ -25,7 +25,7 @@ jQuery( document ).ready( function( $ ) {
 	 $( document ).scroll(function(){
 	 	var top = $(this).scrollTop();
 	 	var categories = $('.category-nav');
-	 	if( top >= 130 && $( window ).width() > 640) {
+	 	if( top >= 130 && $( window ).width() > 880) {
 	 		categories.css({
 	 			position: 'fixed',
 	 			top: '20px'

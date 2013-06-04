@@ -268,7 +268,6 @@ function resource_image() {
 		$size = 'anthill-full';
 	
 	if ( has_post_thumbnail() ) { ?>
-	
 	<div class="resource-image thumbnail">
 		<a href="<?php the_permalink(); ?>">
 			 <?php the_post_thumbnail( $size ); ?> 
@@ -314,8 +313,7 @@ function anthill_category_id_class($classes) {
     if(!has_post_thumbnail($post->ID))
 		$classes[] = "no-image";
 	
-	//for convenience, add the categories to the class
-	
+	//for convenience, add the categories to the class	
     foreach(get_the_terms($post->ID, 'filters') as $category)
         $classes[] = $category->slug;
     //all done!
