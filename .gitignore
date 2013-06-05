@@ -1,6 +1,8 @@
 .htaccess
 wp-config.php
 wp-content/plugins/theme_helper-master/
+wp-content/plugins/wp-migrate-db/
+wp-config - local.php
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
