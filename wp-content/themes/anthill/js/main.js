@@ -20,7 +20,10 @@ jQuery( document ).ready( function( $ ) {
   		columnWidth: function( containerWidth ) {
   			return containerWidth / columns;
   		}
+
   	} );
+	 /* @TODO:  figure out why sometimes the tiles "stack".. I tried the reload method, but I may be implementing it wrong*/
+	 $( '.tiles-list' ).masonry('reload');
 	/**
 	 *	Sticky Sidebar Navigation
 	 *  
