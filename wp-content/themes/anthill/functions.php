@@ -275,9 +275,9 @@ function resource_image() {
 			 <?php the_post_thumbnail( $size ); ?> 
 		</a>
 	<?php } ?>
-		<!-- @TODO Make the popularity legit -->
+		<!-- @TODO Make the popularity legit 
 		<div class="popularity"><a href="#"><i class="icon-heart"></i></a> 9999</div>
-		
+		-->
 	<?php if ( has_post_thumbnail() ) { ?>
 	</div>
 	<?php }
