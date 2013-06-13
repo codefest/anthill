@@ -26,8 +26,22 @@ Table of Contents
  ==Basic Layout
  ==Links
  ==Typography
+ ==misc tags
+ ==Header styles
  ==Navigation
+ ==Tile - visual
+ ==Category Icons
+ ==Buttons and forms
+ ==Alerts
+ ==Grid
+ ==Helper classes
+ ==Media Queries (Break Points)
+ 	==HD screens
+	==Print styles
+
+ 
   @TODO  finish the table of contents here
+
 
 _______________________________________________________________________
 
@@ -239,7 +253,6 @@ q:after {
 .nomargin {
 	margin: 0;
 }
-
 /*
 ==Header styles
 */
@@ -256,7 +269,6 @@ header .logo{
 header .logo a:hover {
 	background: none;
 }
-
 header .logo h2, header .logo h1, header .logo h3 {
 	/* TODO: make this screen reader friendly */
 	display: none;
@@ -268,11 +280,9 @@ header #searchform input[type=text] {
 	display: inline-block;
 	width: 88%;
 }
-
 /*
 ==Navigation
 */
-
 nav ul,
 .utilities ul {
 	list-style-type: none;
@@ -400,7 +410,6 @@ nav ul li {
 	margin:1.230769em; /* 16/13 */
 	font-size:.8125em; /* 13/16 */
 }
-
 .search .tile {
 	margin-right: 2%;
 	margin: 0 0 1.25em 0;
@@ -416,18 +425,15 @@ nav ul li {
 	min-height:10em;
 
 }
-.tile.no-image .placeholder{
-	
-	
-		
+.tile.no-image .placeholder{	
 	display: block;
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#1a000000',GradientType=0 ); /* IE6-9 */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* IE10+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* Opera 11.10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#1a000000',GradientType=0 ); /* IE6-9 */
 	background-color:#eee;
 	background-image:url(images/ant.png);
 	background-attachment: fixed;
@@ -454,14 +460,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 /*
 ==Category Icons
 */
-
-
 .category-icon i:before {
 	font-family: 'topik';
 	content: attr(data-icon);
 	-webkit-font-smoothing: antialiased;
 }
-
 .category-icon a,
 .category-icon i {
 	font-weight: normal;
@@ -470,7 +473,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	color: #FFFFFF;
 	font-style: normal;
 }
-
 .tile .entry-title{
 	position:relative;
 }
@@ -490,8 +492,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .tile .category-icon a:hover{
 	background-color: transparent;
 }
-
-
 /* @TODO:  make this positioning fluid... fix the markup of the icon so the a tag is inside the div */
 .search .tile.no-image .category-icon{
 	position: absolute;
@@ -506,9 +506,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	font-weight: normal;
 	font-size: .9em;
 }
-/*
-==Icons
-*/
 .avatar {
 	-webkit-border-radius: 5em;
 	border-radius: 5em;
@@ -536,7 +533,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	position: relative;
 }
 /* fine-tuning */
-
 .category-icon.design i {
 	top: -.05em;
 }
@@ -552,7 +548,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .category-icon.web i {
 	top: -.055em;
 }
-
 .category-icon.three-d {
 	background-color: #a4be13;
 	border-color: #7fa30b;
@@ -580,7 +575,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	background-color: #b7107a;
 	border-color: #990948;
 }
-
 /*
 ==Buttons and forms
 */
@@ -588,7 +582,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 input[type=submit],
 input[type=button],
 button,
-
 #wp-submit {
 	background-color: #eaeded;
 	display: inline-block;
@@ -607,7 +600,6 @@ button.primary {
 	color:#FFF;
 	font-family:  Raleway, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
-
 #wp-submit{
 	background-color: #29a1d3;/* default blue*/
 	padding:.5em ;
@@ -698,7 +690,6 @@ textarea:focus{
 	box-shadow: inset 0px 0px .625em 0px #dce7e8; 
 	border-color:#b5c9c9;
 	outline:none;
-
 }
 label{
 	display: block;
@@ -711,11 +702,9 @@ input[type="radio"]{
 	margin-right: .5em;
 	display: inline-block;
 }
-
 .hint{
 	color: #8d9292;
 }
-
 .bubble{
 	background-color:#29A1D3;
 	padding:.25em .25em .25em 1em;
@@ -724,7 +713,6 @@ input[type="radio"]{
 	margin-bottom:.25em;
 	max-width:15em;
 	cursor: pointer;
-
 }
 .radio-3d{
 	background-color:#c9d974;
@@ -744,9 +732,8 @@ input[type="radio"]{
 .radio-design{
 	background-color:#7fd0c7;
 }
-
 /*
-== alerts
+==Alerts
 */
 .alert {
 	padding:.75em;
@@ -783,9 +770,8 @@ input[type="radio"]{
 	border-color: #ffbeaf;
 	color: #5b1919;
 }
-
 /*
-==grid
+==Grid
 */
 .grid-full{
 	margin-right: 2%;
@@ -872,11 +858,9 @@ input[type="radio"]{
 .aligncenter{
 	text-align: center;
 }
-
 /*
 ==Media Queries
 */
-
 @media only screen and (min-width: 25em) { 		/* 400 and up */
 	.multicolumn-two{
 		-moz-column-count: 2;
@@ -889,7 +873,6 @@ input[type="radio"]{
 	.category-nav .category-icon{
 		font-size:1.3em;
 	}
-
 }
 /* these width values (880px = 55em, 620px = 40em) have to match up with main.js masonry implementation. 
 If you change them here, change them there as well!  */
@@ -928,7 +911,6 @@ If you change them here, change them there as well!  */
 		width:46%;
 		float:left;
 	}
-
 	header .the_logo {
 		position: relative;
 		top: -1.875em;
@@ -952,10 +934,8 @@ If you change them here, change them there as well!  */
 	main .submit-resource{
 		display: block;
 	}
-
 	.utilities ul {
 		display:block;
-
 	}
 	aside {
 		width:22.75%;
@@ -987,7 +967,6 @@ If you change them here, change them there as well!  */
 		float:none;
 		max-width: 36em;
 		margin:0 auto;
-
 	}
 	.tiles-list .tile {
 		width:30.3%;
@@ -1016,12 +995,9 @@ If you change them here, change them there as well!  */
 /* 
 ==HD screens
 */
-
-
 /* 
 ==Print styles
 */
-
 @media print {
 	* {
 		background: transparent !important;
@@ -1039,11 +1015,9 @@ If you change them here, change them there as well!  */
 	abbr[title]:after {
 		content: " (" attr(title) ")";
 	}
-
 	/*
 	 * Don't show links for images, or javascript/internal links
 	 */
-
 	 .ir a:after,  a[href^="javascript:"]:after,  a[href^="#"]:after {
 	 	content: "";
 	 }
