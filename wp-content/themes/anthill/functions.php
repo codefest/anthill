@@ -54,7 +54,7 @@ function anthill_js_activation() {
 	$modernizr_path = get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js';
     wp_register_script( 'modernizrjs', $modernizr_path );
     wp_enqueue_script( 'modernizrjs' );
-    wp_enqueue_script( 'jquery-masonry' );
+   //wp_enqueue_script( 'jquery-masonry' );
     wp_enqueue_script(
 		'jquery-simplemodal',
 		get_template_directory_uri() . '/js/vendor/jquery.simplemodal.js',
@@ -280,6 +280,8 @@ function resource_image() {
 		-->
 	<?php if ( has_post_thumbnail() ) { ?>
 	</div>
+	<?php }else{ ?>
+		<div class="placeholder"></div>
 	<?php }
 }
 /**

@@ -10,6 +10,7 @@
 ?>
 <aside class="nomargin">
 	<nav>
+		<?php anthill_submit_resource_button(); ?>
 		<ul class="category-nav">
 			<?php
 			// Grab all the terms for our filter taxonomy 

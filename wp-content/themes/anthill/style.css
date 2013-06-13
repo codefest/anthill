@@ -341,7 +341,7 @@ nav ul li {
 	width:100%;
 	height:auto;
 	margin-bottom:1em;	
-	word-wrap: break-word;
+	word-wrap: break-word;	
 }
 .resource-image {
 	position: relative;
@@ -380,6 +380,12 @@ nav ul li {
 }
 .tile .entry-title {
 	margin:1em 1em .75em;
+	height:3em;
+}
+.tile .entry-title a{
+	height:3em;
+	display: block;
+	overflow: hidden;
 }
 .tile .entry-title .category-icon{
 	font-size:.8888888888em !important;
@@ -406,33 +412,44 @@ nav ul li {
 }
 /* colored bars for tiles with no image */
 .tile.no-image{	
-	padding-top:2em;
-	-webkit-box-shadow: inset 0px 2em 0px 0px #e1e3e3;        
-    box-shadow: inset 0px 2em 0px 0px #e1e3e3;
+	height:auto;
+	min-height:10em;
+
 }
-.tile.no-image.typography{
-	-webkit-box-shadow: inset 0px 2em 0px 0px #e88282;
-    box-shadow: inset 0px 2em 0px 0px #e88282;
+.tile.no-image .placeholder{
+	
+	
+		
+	display: block;
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#1a000000',GradientType=0 ); /* IE6-9 */
+	background-color:#eee;
+	background-image:url(images/ant.png);
+	background-attachment: fixed;
+
 }
-.tile.no-image.photography{
-	-webkit-box-shadow: inset 0px 2em 0px 0px #a4a1d4;
-    box-shadow: inset 0px 2em 0px 0px #a4a1d4;
+.tile.no-image.typography .placeholder{
+	background-color: #e88282;
 }
-.tile.no-image.three-d {
-	-webkit-box-shadow: inset 0px 2em 0px 0px #c9d974;
-    box-shadow: inset 0px 2em 0px 0px #c9d974;
+.tile.no-image.photography .placeholder{
+	background-color: #a4a1d4
 }
-.tile.no-image.design{
-	-webkit-box-shadow: inset 0px 2em 0px 0px #7fd0c7;
-    box-shadow: inset 0px 2em 0px 0px #7fd0c7;
+.tile.no-image.three-d .placeholder{
+	background-color: #c9d974
 }
-.tile.no-image.video{
-	-webkit-box-shadow: inset 0px 2em 0px 0px #d572b1;
-    box-shadow: inset 0px 2em 0px 0px #d572b1;
+.tile.no-image.design .placeholder{
+	background-color: #7fd0c7
 }
-.tile.no-image.web{
-	-webkit-box-shadow: inset 0px 2em 0px 0px #f0bc7f;
-    box-shadow: inset 0px 2em 0px 0px #f0bc7f;
+.tile.no-image.video .placeholder{
+	background-color: #d572b1
+}
+.tile.no-image.web .placeholder{
+	background-color: #f0bc7f
 }
 /*
 ==Category Icons
@@ -881,6 +898,10 @@ If you change them here, change them there as well!  */
 		width:47%;
 		margin:0 1% 2% 1%;
 		float:left;
+		height:inherit;
+	}
+	.tiles-list .tile:nth-child(odd){
+		clear: both
 	}
 	.primary.solid{
 		display: inline-block;
@@ -972,6 +993,12 @@ If you change them here, change them there as well!  */
 		width:30.3%;
 		margin:0 .5% 2% .5%;
 		float:left;
+	}
+	.tiles-list .tile:nth-child(odd){
+		clear: none;
+	}
+	.tiles-list .tile:nth-child(3n+1){
+		clear: both
 	}
 	.category-nav{
 		background: url('images/categories_bg.png') -1.25em -140px no-repeat;

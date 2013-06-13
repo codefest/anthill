@@ -11,7 +11,7 @@
 <?php get_sidebar(); ?>
 	<main>		
 		<div class="tiles-list cf masonry">
-		<?php anthill_submit_resource_button('tile'); ?>
+	
 		<?php 
 		/** Customize the loop to show Resource post types
 		 *
