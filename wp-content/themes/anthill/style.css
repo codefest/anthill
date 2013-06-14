@@ -618,9 +618,9 @@ button#searchsubmit i{
 	vertical-align: bottom;
 	margin:0;
 }
-.primary.solid{
+.primary.solid,.button-primary{
 	background-color: #26a4af !important;
-	border-bottom: solid .25em #11636f;
+	border-bottom: solid .25em #11636f !important;
 	padding: .25em 1em !important;
 	text-shadow: 0 -1px 0 #117182;
 	font-weight: bold;
@@ -771,6 +771,51 @@ input[type="radio"]{
 	color: #5b1919;
 }
 /*
+==Modal windows
+*/
+.hideModal {
+	display: none !important;
+}
+.showModal {
+	display: block !important;
+}
+#dialog{
+	width: 80%;
+	position: fixed;
+	top: 2em;
+	left: 10%;
+	z-index: 3000;
+	
+	background-color: #FAFAFA;
+	border: solid .25em #e1e3e3;
+	-webkit-border-radius: .625em;
+	border-radius: .625em;
+    -webkit-box-shadow: 2px 2px 12px 0px #333;
+            box-shadow: 2px 2px 12px 0px #333;
+}
+	/* Add padding to the left and right of everthing that is a direct child */
+	#dialog > * {
+		padding: 0 1em;
+	}
+	#dialog .close {
+		padding: 0;
+		position: absolute;
+		top: 0;
+		right: .2em;
+		font-size: 2em;
+	}
+#mask{
+	background: #000;
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+    opacity: .75;
+	z-index: 2000;
+}
+/*
 ==Grid
 */
 .grid-full{
@@ -886,7 +931,7 @@ If you change them here, change them there as well!  */
 	.tiles-list .tile:nth-child(odd){
 		clear: both
 	}
-	.primary.solid{
+	.primary.solid,.button-primary{
 		display: inline-block;
 		width: auto;
 	}

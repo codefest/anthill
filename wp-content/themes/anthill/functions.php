@@ -345,14 +345,14 @@ function anthill_search_filter($query) {
  */
 add_action('wp_footer', 'anthill_login_popup');
 function anthill_login_popup(){ ?>
-	<div id="dialog" class="window">
+	<div id="dialog" class="window hideModal">
 		<h3>Login to anthill!</h3>
 		<?php wp_login_form(); ?>
-		<a href="#" class="close"><i class="icon-remove-sign icon-large"></i><span class="screen-reader-text"> Close</span></a>
+		<a href="#" class="close" role="pop-trigger"><i class="icon-remove-sign icon-large"></i><span class="screen-reader-text"> Close</span></a>
 	</div>
-	<div id="mask"></div>
+	<div id="mask" class="hideModal"></div>
 <?php }
-/**
+/**v
  * login button with context logic
  * use anywhere a login/logout button that triggers the modal popup is desired
  */

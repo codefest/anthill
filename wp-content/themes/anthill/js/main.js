@@ -35,6 +35,16 @@ jQuery( document ).ready( function( $ ) {
 
 
 	/**
-	* TODO: add simplemodal
-	*/	
+	* Modal events
+	* 
+	* USAGE: Add role="pop-trigger" to any <a> tag to trigger dialog boxes - toggles between 'hideModal' and 'showModal' classes to CSS display: none; or display: block;
+	* TODO: Add better handling for dialog content to change if needed down the line, right now it always exists at the bottom as a login box
+	*/
+	
+	$('a[role="pop-trigger"]').click(function(e){
+		e.preventDefault(); // Prevents change in URI
+		$('#dialog,#mask').toggleClass('hideModal','showModal');
+	});
+	
+	
 } );
