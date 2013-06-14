@@ -55,13 +55,13 @@ function anthill_js_activation() {
     wp_register_script( 'modernizrjs', $modernizr_path );
     wp_enqueue_script( 'modernizrjs' );
    //wp_enqueue_script( 'jquery-masonry' );
-    wp_enqueue_script(
-		'jquery-simplemodal',
-		get_template_directory_uri() . '/js/vendor/jquery.simplemodal.js',
-		array( 'jquery' ),
-		false,
-		true // This script is loaded in the footer
-	);
+	//     wp_enqueue_script(
+	// 	'jquery-simplemodal',
+	// 	get_template_directory_uri() . '/js/vendor/jquery.simplemodal.js',
+	// 	array( 'jquery' ),
+	// 	false,
+	// 	true // This script is loaded in the footer
+	// );
     wp_enqueue_script(
 		'main-js',
 		get_template_directory_uri() . '/js/main.js',
@@ -69,6 +69,8 @@ function anthill_js_activation() {
 		false,
 		true // This script is loaded in the footer
 	);
+	
+	
 	wp_register_style( 'normalize', get_template_directory_uri() . '/css/normalize.min.css' );
 	wp_enqueue_style( 'normalize' );
 	wp_register_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
@@ -343,7 +345,8 @@ function anthill_search_filter($query) {
  * Login Pop-up
  * works with anthill_loginout()
  */
-add_action('wp_footer', 'anthill_login_popup');
+
+/*add_action('wp_footer', 'anthill_login_popup');
 function anthill_login_popup(){ ?>
 	<div id="dialog" class="window hideModal">
 		<h3>Login to anthill!</h3>
@@ -352,7 +355,43 @@ function anthill_login_popup(){ ?>
 	</div>
 	<div id="mask" class="hideModal"></div>
 <?php }
-/**v
+*/
+add_action('wp_head','anthill_ajaxurl');
+function anthill_ajaxurl() {
+?>
+<script type="text/javascript">
+var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+</script>
+<?php
+}
+
+add_action( 'wp_ajax_anthill_modal', 'anthill_modal_box' );
+add_action( 'wp_ajax_nopriv_anthill_modal', 'anthill_modal_box' );
+function anthill_modal_box() {
+	$content = $_POST['show'];
+	switch( $content ) {
+		case 'submit':
+		?>
+		<h3>Submit to anthill!</h3>
+			<?php get_template_part('submit', 'form' ); ?>
+		<?php
+		break;
+		case 'register':
+		?>
+		<h3>Register to anthill!</h3>
+		<?php
+		break; 
+		default :
+		?>
+		<h3>Login to anthill!</h3>
+		<?php wp_login_form(); ?>
+		<?php
+	}
+	die();
+}
+
+
+/**
  * login button with context logic
  * use anywhere a login/logout button that triggers the modal popup is desired
  */
@@ -525,9 +564,9 @@ function anthill_submit_resource_button($style = button){
 	}
 	?>
 	<div class="submit-resource <?php echo $wrapper; ?>">
-			<a href="<?php echo home_url('/submit/'); ?>" class="<?php echo $class; ?>">
-				<i class="icon-plus"></i><span class="button-text">Submit resource</span>
-			</a>
+		<a href="#submit" role="pop-trigger" class="<?php echo $class; ?>">
+			<i class="icon-plus"></i><span class="button-text">Submit resource</span>
+		</a>
 	</div>
 	<?php
 }

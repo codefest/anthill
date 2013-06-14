@@ -781,7 +781,7 @@ input[type="radio"]{
 }
 #dialog{
 	width: 80%;
-	position: fixed;
+	position: absolute;
 	top: 2em;
 	left: 10%;
 	z-index: 3000;

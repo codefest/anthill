@@ -63,7 +63,7 @@
 			'container' => '',
 			'items_wrap' => '%3$s',
 			)); ?>
-		<li><a href="#">Sign Up</a></li>
+		<li><a href="#register" role="pop-trigger">Sign Up</a></li>
 		<li><?php anthill_loginout(); ?></li>
 	</ul>
 	</div>
