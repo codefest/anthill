@@ -63,7 +63,9 @@
 			'container' => '',
 			'items_wrap' => '%3$s',
 			)); ?>
+		<?php if ( !is_user_logged_in() ) { ?>
 		<li><a href="#register" role="pop-trigger">Sign Up</a></li>
+		<?php } ?>
 		<li><?php anthill_loginout(); ?></li>
 	</ul>
 	</div>

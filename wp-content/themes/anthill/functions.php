@@ -379,14 +379,17 @@ function anthill_modal_box() {
 		case 'register':
 		?>
 		<h3>Register to anthill!</h3>
+		<!-- TODO: Add register form here -->
 		<?php
 		break; 
 		default :
 		?>
 		<h3>Login to anthill!</h3>
-		<?php wp_login_form(); ?>
-		<?php
+		<?php 
+		# Add the 'redirect' parameter to specify not to redirect to /wp-admin/admin-ajax.php
+		wp_login_form( array('redirect' => get_bloginfo('url') ) );
 	}
+	# Kill the function, otherwise it throws on a "0" at the end
 	die();
 }
 
