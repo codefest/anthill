@@ -373,15 +373,16 @@ function anthill_modal_box() {
 		case 'submit':
 		?>
 		<h3>Submit to anthill!</h3>
-			<?php get_template_part('submit', 'form' ); ?>
+			<?php get_template_part('form', 'submit' ); ?>
 		<?php
 		break;
 		case 'register':
 		?>
 		<h3>Register to anthill!</h3>
 		<!-- TODO: Add register form here -->
+		<?php get_template_part('form', 'register' ); ?>
 		<?php
-		break; 
+		break;
 		default :
 		?>
 		<h3>Login to anthill!</h3>
@@ -531,6 +532,20 @@ function anthill_resource_media_upload( $file_resource, $resource_id ) {
  * Based on http://www.wrichards.com/blog/2009/05/php-check-if-a-url-exists-with-curl/
  */
 
+add_action( 'wp_ajax_anthill_check_url', 'anthill_check_url_ajax' );
+add_action( 'wp_ajax_nopriv_anthill_check_url', 'anthill_check_url_ajax' );
+
+function anthill_check_url_ajax() {
+	$url = $_POST['url'];
+	$results = anthill_check_url( $url );
+	if( $results == true ) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+	die();
+}
+
 function anthill_check_url( $url = null ) {
 	# Return false if no URL provided
 	if ( $url == null )
@@ -558,6 +573,7 @@ function anthill_check_url( $url = null ) {
  * @param $style string: 	'button' 	=> Button Style
  *							'tile' 		=> Tile Style 
  */
+
 function anthill_submit_resource_button($style = button){
 	$wrapper = 'submit-resource';
 	$class='primary button';
