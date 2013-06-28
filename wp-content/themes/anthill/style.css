@@ -35,6 +35,7 @@ Table of Contents
  ==Alerts
  ==Grid
  ==Helper classes
+ ==Single styles
  ==Media Queries (Break Points)
  	==HD screens
 	==Print styles
@@ -172,17 +173,7 @@ footer {
 	clear: both;
 	padding-top: 1.25em;
 }
-.single article{
-	padding-left: 1.56em;
-}
-.single.title.entry-content{
-	margin: 0;
 
-}
-.single h4{
-margin:0;
-
-}
 /*
 ==Links
 */
@@ -913,6 +904,26 @@ input[type="radio"]{
 .aligncenter{
 	text-align: center;
 }
+	 /* 
+==Single styles
+*/
+.single article{
+	padding-left: 1.56em;
+}
+.single .entry-content{
+	margin: 0;
+}
+.single h4{
+margin:0;
+}
+.single p{
+margin:0;
+}
+.single .postmeta{
+margin:0;
+margin-bottom: 1em;
+}
+
 /*
 ==Media Queries
 */

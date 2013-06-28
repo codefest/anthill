@@ -11,7 +11,7 @@
  */
 ?>
 </div><!-- .wrapper -->
-<footer class="wrapper">footer stuff goes here</footer>
+<footer class="wrapper"></footer>
 <div id="dialog" class="window hideModal">
 	<div class="content">
 	</div>
